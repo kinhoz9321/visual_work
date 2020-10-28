@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_form3.html</title>
+    <style>
+        .container{
+            width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        클래스 속성의 값이 container 인 div 입니다.
+    </div>
+    <div>
+        기냥 div  입니다.
+    </div>
+    <div class="container">
+        <h1>table 요소를 이용해서 form 요소의 줄 맞추기</h1>
+        <form action="login.jsp">
+            <table>
+                <tr>
+                    <td><label for="email">이메일</label></td>
+                    <td><input type="text" name="email" id="email"/></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">비밀번호</label></td>
+                    <td><input type="password" name="pwd" id="pwd"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">로그인</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

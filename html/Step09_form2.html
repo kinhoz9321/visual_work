@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_form2.html</title>
+</head>
+<body>
+    <h1>회원가입 폼 입니다.</h1>
+    <form action="signup.jsp">
+        <label for="email"></label>이메일</label>
+        <input type="text" id="email" name="email"/><br/>
+        <fieldset>
+            <legend>성별 정보 선택</legend>
+            <label>
+                <input type="radio" name="gender" value="man" checked/> 남자
+            </label>
+            <label>
+                <input type="radio" name="gender" value="woman" /> 여자
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>취미 정보 선택</legend>
+            <label>
+                <input type="checkbox" name="hobby" value="piano"/> 피아노 
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="carom"/> 당구
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="beer" /> 맥주
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="etc" /> 기타
+            </label>
+        </fieldset>
+        
+        <label for="job">직업선택</label>
+        <select name="job" id="job">
+            <option value="">선택</option>
+            <option value="teacher">선생님</option>
+            <option value="doctor">의사</option>
+            <option value="developer">개발자</option>
+            <option value="etc">기타</option>
+        </select>
+        <br/>
+        <label for="lunch">점심 메뉴 선택</label>
+        <select name="lunch" id="lunch" multiple>
+            <!-- option 요소에 value 가 없으면 innerText 가 value  로 전송된다. -->
+            <option>자장면</option>
+            <option>짬뽕</option>
+            <option>군만두</option>
+            <option>탕수육</option>
+        </select>
+        <br/>
+        <label for="coffee">커피 선택</label>
+        <select name="coffee" id="coffee">
+            <optgroup label="에스프레소">
+                <option>아메리카노</option>
+                <option>카페라떼</option>
+                <option>카페모카</option>
+            </optgroup>
+            <optgroup label="프라프치노">
+                <option>카라멜 프라프치노</option>
+                <option>자바칩 프라프치노</option>
+                <option>오렌지 프라프치노</option>
+            </optgroup>
+        </select>
+        <br/>
+        <label for="file">첨부 파일</label>
+        <input type="file" id="file" name="file"/>
+        <br/>
+
+        <label for="comment">하고 싶은 말</label><br/>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <br/>
+        <button type="submit">가입</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>
