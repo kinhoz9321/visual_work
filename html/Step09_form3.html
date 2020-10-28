@@ -20,7 +20,7 @@
        
         ***중요!***
         어떤 컨텐츠를 가운데 정렬하고 싶을 때
-        폭을 결정하고 좌우 마진을 똑같이 해라
+        폭을 결정하고 좌우 마진을 똑같이 해라 (auto 사용!)
         */
     </style>
 </head>
@@ -31,6 +31,7 @@
     <div>
         그냥 div 입니다.
     </div>
+
     <div class="container">
         <h1>table 요소를 이용해서 form 요소의 줄 맞추기</h1>
     <form action="login.jsp">
@@ -50,6 +51,8 @@
         </table>
     </form>
     </div>
+    <!-- 폭을 CSS로 고정시켜 놓았기 때문에 웹창을 줄여도 텍스트가 움직이지 않는다. -->
+
     <h1>table 요소를 이용해서 form 요소의 줄 맞추기</h1>
     <form action="login.jsp">
         <table>
@@ -70,6 +73,8 @@
             마지막 버튼을 어디 <td>에 두느냐에 따라 느낌이 달라진다.
             표의 모양을 기억하기.
         -->
+        
+        <h1>table 요소를 이용하지 않아서 form 요소의 줄을 맞추지 않은 형식</h1>
         <label for="email">이메일</label>
         <input type="text" name="email" id="email"/>
         <br/>
