@@ -7,23 +7,52 @@
 </head>
 <body>
     <p id="one" onclick="document.querySelector('#one').innerText='안녕히 가세요.';">안녕하세요</p>
+
     <p id="two"
     onmouseover="document.querySelector('#two').innerText='김구라';"
     >어쩌구</p>
-    <p id="three">저쩌구</p>
-    <!-- 원하는 시점에 이너텍스트를 바꾸는 것이 가능 -->
-    <!--
-    * 크롬 콘솔창에서 이너텍스트 바꾸기
-    document.querySelector("#one").innerText = "안녕히 가세요";
-    "안녕히 가세요"
-    document.querySelector("#two").innerText = "김구라";
-    "김구라"
-    document.querySelector("#three").innerText = "해골";
-    "해골"
 
-    * 자바스크립트는 대소문자를 가린다. 틀리면 안됨.
+    <p id="three" onmouseover="change();">저쩌구</p>
+    <script>
+        //함수는 특정 시점에 일괄 실행할 javascript를 모아 놓을 수 있다.
+        function change(){
+            document.querySelector("#three").innerText="해골";
+            document.querySelector("#three").style.color="red";
+            document.querySelector("#three").style.fontSize="100px";
+        }
+    </script>
+    <!-- 아래 버튼을 클릭하면 id가 result로 지정된 p요소에 "버튼을 클릭했네?"
+    라고 출력해 보세요.-->
 
-    *onclick 자바스크립트 영역
-    -->
+    <!-- 버튼에 함수 안쓰고 onclick속성 쓰기 -->
+    <button onclick="document.querySelector('#result').innerText='버튼을 클릭했네?';">눌러보셈</button>
+    <p id="result"></p>
+
+    <!-- 함수 써서 onclick속성 쓰기, 버튼 색상 변경 -->
+    <button id="btn" onclick="clicked();">눌러보셈</button>
+    <p id="result2"></p>
+    <script>
+        function clicked(){
+            document.querySelector('#result2').innerText="버튼을 클릭했네?";
+            document.querySelector('#btn').style.color="orange";
+            }
+    </script>    
 </body>
 </html>
+                <!--
+                웹브라우저야 밑에 있는 자바 스크립트는 
+                위에 3번째 p요소에 마우스가 올라가면 실행시켜줘
+                -->
+                <!-- 원하는 시점에 이너텍스트를 바꾸는 것이 가능 -->
+                <!--
+                * 크롬 콘솔창에서 이너텍스트 바꾸기
+                document.querySelector("#one").innerText = "안녕히 가세요";
+                "안녕히 가세요"
+                document.querySelector("#two").innerText = "김구라";
+                "김구라"
+                document.querySelector("#three").innerText = "해골";
+                "해골"
+            
+                * 자바스크립트는 대소문자를 가린다. 틀리면 안됨.
+            
+                *onclick 자바스크립트 영역

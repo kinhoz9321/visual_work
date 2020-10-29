@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello2.html</title>
+</head>
+<body>
+    <p id="one" onmouseover="onOver();" onmouseout="onOut();">마우스를 올려보세요</p>
+    <img id="two" src="images/juck1.png" onclick="image();" onmouseout="image2();">
+    <script>
+        function onOver(){
+            document.querySelector("#one").style.color="powderblue";
+            document.querySelector("#one").innerText="자바스크립트 배우는 중 내일 휴일!";
+        }
+        function onOut(){
+            document.querySelector("#one").style.color="black";
+            document.querySelector("#one").innerText="마우스를 올려보세요";
+        }
+        function image(){
+            document.querySelector("#two").setAttribute("src","images/juck2.png")
+        }
+        function image2(){
+            document.querySelector("#two").setAttribute("src","images/juck1.png")
+        }
+    </script>
+    
+    <div>
+        <img id="four" onclick="a();" src="images/rabbit_1.png"/>
+        <button onclick="b();" id="three" style="display:none;">눌러바!</button>
+    </div>
+    <script>
+        function a(){
+            //버튼은 보이게 하고
+            document.querySelector("#three").style.display="inline";
+            //이미지는 안보이게 하기
+            document.querySelector("#four").style.display="none";
+        }
+        function b(){
+            location.href="https://naver.com";
+        }
+    </script>
+</body>
+</html>
+<!-- onmouseover="" onmouseout=" " 자바스크립트 영역 -->
