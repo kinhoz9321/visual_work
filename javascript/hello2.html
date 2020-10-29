@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello2.html</title>
+</head>
+<body>
+    <p id="one" onmouseover="onOver();" onmouseout="onOut();">마우스를 올려보셈</p>
+    <img  id="two" onclick="change();" src="images/kim1.png"/>
+    <div>
+        <img id="four" onclick="a();" src="images/rabbit_1.png"/>
+        <button onclick="b();" id="three" style="display: none;">가즈아~</button>
+    </div>
+    <script>
+        function b(){
+            location.href="https://daum.net";
+        }
+
+        function a(){
+            //버튼은 보이게 하고 
+            document.querySelector("#three").style.display="inline";
+            //이미지는 안보이게 하기 
+            document.querySelector("#four").style.display="none";
+        }
+
+        function onOver(){
+            document.querySelector("#one").style.color="yellow";
+        }
+        function onOut(){
+            document.querySelector("#one").style.color="black";
+        }
+        function change(){
+            document.querySelector("#two").setAttribute("src","images/1.jpg");
+        }
+    </script>
+</body>
+</html>
