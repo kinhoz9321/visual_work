@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+</head>
+<body>
+    <p id="one" 
+        onclick="document.querySelector('#one').innerText='안녕히 가세요.';">
+    안녕하세요</p>
+    <p id="two" 
+        onmouseover="document.querySelector('#two').innerText='김구라';">어쩌구...</p>
+    <p id="three" onmouseover="change();">저쩌구...</p>
+
+    <!-- 
+        아래 버튼을 클릭하면 id 가 result 로 지정된 p 요소에
+        "버튼을 클릭했네?"
+        라고 출력해 보세요. 
+    -->
+    <button onclick="clicked();">눌러보셈</button>
+    <p id="result"></p>
+
+    <script>
+        //함수는 특정 시점에 일괄 실행할 javascript 를 모아 놓을수 있다. 
+        function change(){
+            document.querySelector("#three").innerText="해골";
+            document.querySelector("#three").style.color="red";
+            document.querySelector("#three").style.fontSize="100px";
+        }
+
+        function clicked(){
+            document.querySelector("#result").innerText="버튼을 클릭했네?";
+        }
+    
+    </script>
+</body>
+</html>
