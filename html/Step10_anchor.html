@@ -25,6 +25,21 @@
             <li><a href="C:\acorn2021\visual_work\html\hello.html">hello.html 로 가기</a></li>
             <!-- 웹에서의 절대 경로 이동 -->
             <li><a href="https://daum.net">daum 으로 가기</a></li>
+            <!-- 이미지에 링크를 걸수도 있다. -->
+            <li><a href="http://14.63.164.99"><img src="images/kim1.png"/></a></li>
+            <li>
+                <a href="http://14.63.164.99">
+                    <!-- 
+                        인라인 요소는 월래 블럭 요소를 자식 요소로 가질수 없다.
+                        단 a 요소만 예외적으로 div 같은 블럭요소를 자식요소로 
+                        가질수 있다.
+                    -->
+                    <div>
+                        <h3>이동하기</h3>
+                        <img src="images/kim1.png"/>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
 </body>
