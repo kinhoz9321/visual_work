@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+</head>
+<body>
+    <p id="one" onclick="document.querySelector('#one').innerText='안녕히 가세요.';">안녕하세요</p>
+    <p id="two"
+    onmouseover="document.querySelector('#two').innerText='김구라';"
+    >어쩌구</p>
+    <p id="three">저쩌구</p>
+    <!-- 원하는 시점에 이너텍스트를 바꾸는 것이 가능 -->
+    <!--
+    * 크롬 콘솔창에서 이너텍스트 바꾸기
+    document.querySelector("#one").innerText = "안녕히 가세요";
+    "안녕히 가세요"
+    document.querySelector("#two").innerText = "김구라";
+    "김구라"
+    document.querySelector("#three").innerText = "해골";
+    "해골"
+
+    * 자바스크립트는 대소문자를 가린다. 틀리면 안됨.
+
+    *onclick 자바스크립트 영역
+    -->
+</body>
+</html>
