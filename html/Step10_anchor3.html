@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_anchor3.html</title>
+    <style>
+        .container{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* 전체 폭을 90%로 설정 웹 브라우저의 크기에 따라 크기가 변화한다. */
+        .spacer{
+            height: 500px;
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //alert('이런 귀한 곳에 누추하신 분이 들어오시다니 돌아가'); * 중지 시켜놓음.
+    </script>
+    <!-- 페이지가 로딩되는 시점 한번만 자바스크립트가 실행됨. -->
+    <div class="container">
+        <h1>anchor 의 다른 기능</h1>
+        <ul>
+            <li><a href="#one">one</a></li>
+            <li><a href="#two">two</a></li>
+            <li><a href="#three">three</a></li>
+            <!-- 책갈피 기능 -->
+            <li><a href="javascript:alert('바부♥');">눌러봐여!</a></li>
+            <!-- 
+                javascript 실행 
+                링크 안의 javascript 영역은 링크를 누를 때 마다 실행시킬 수 있다. 
+            -->
+            <li><a href="tel:010-0000-0000">전화걸기</a></li>
+            <li><a href="mailto:aaa@naver.com">이메일 쓰기</a></li>
+            <!-- 모바일 기기에서 테스트 가능한 기능 -->
+        </ul>
+        <div class="spacer"></div>
+        <p id="one">one 입니다.</p>
+        <div class="spacer"></div>
+        <p id="two">two 입니다.</p>
+        <div class="spacer"></div>
+        <p id="three">three 입니다.</p>
+        <div class="spacer"></div>
+    </div>
+</body>
+</html>
