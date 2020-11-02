@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_Datatype4.html</title>
+</head>
+<body>
+    <script>
+        /* 친구의 이름을 순서대로 하나의 묶음으로 관리하기 !순서있게 관리하기! */
+
+        // 여러개의 값을 순서있게 관리하는 array type
+        var names=["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+        //부서의 번호를 순서대로 하나의 묶음으로 관리하기
+        var nums=[10, 20, 30, 40];
+        /*
+        *** 배열 array 타입 ***
+        []안에 방을 지정하지 않고 값을 나열함 ,를 이용 
+        자동으로 index를 부여.
+        console 불러오기
+        names[0],[1],[2],[3]
+        숫자가 0부터 시작함!!!
+        순서대로 불러옴.
+        */
+
+        //인덱스를 이용한 참조
+        var a=names[0]; //"김구라"
+        var b=names[1]; //"해골"
+        var c=nums[0]; //10
+        var d=nums[1]; //20
+
+        // 참조해서 값 수정하기
+        names[2]="신현호";
+        nums[0]=100;
+        
+
+    </script>
+</body>
+</html>

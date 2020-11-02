@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_Datatype3.html</title>
+</head>
+<body>
+    <script>
+        // 회원 한명의 정보라고 가정하자
+        var num=1;
+        var name="김구라";
+        var addr="노량진";
+    </script>
+        <!--
+        한명의 정보를 관리하는데 변수가 총 3개 필요 
+        
+        하지만 여러 개의 데이터를 하나의 묶음으로 관리할 수 있는 데이터 타입이 있다면 어떨까? = object 타입
+        그렇다면 회원 한명의 정보를 관리하는데 변수 1개만 필요하게 된다.
+        -->
+    <script>
+        // object type
+        var mem1={num:1, name:"김구라", addr:"노량진"};
+        var mem2={name:"해골", num:2, addr:"행신동"};
+        var info1={empno:8000, ename:"SMITH", sal:5000};
+        var mem3={num:num, name:name, addr:addr};
+        /* 
+        회원 한명의 정보 num, name, addr 을 가리킨다.
+        이미 만들어진 값을 변수명으로 참조해서 집어넣은 것. 
+        중괄호 안에는 순서가 없다. 
+        *** 순서가 없는 데이터를 관리하고 싶을 때는 오브젝트 타입을 쓴다.
+        */
+        //object type의 특정방을 참조해서 불러오기
+        var a=mem1.num;
+        var b=mem2.name;
+        var c=mem3.addr;
+
+        /* 
+        *** 중요! ***
+        object type 의 특정방을 참조해서 수정하기 
+        대입연산자의 좌측에서 참조하면 우측에 있는 값이 좌측에 들어간다. */
+        mem1.num=999;
+        mem1.name="이정호";
+
+        /*
+        object type 
+        작성규칙 var 변수명={값을 예상할 수 있는 이름:값,}
+        ,로 데이터를 구분.
+        console 창에서 각각의 방을 참조하는 방법
+        - 그 방을 지칭한다. 
+        방을 참조하면 그 방의 값을 불러오거나, 수정할 수 있다, 그 방 자체를 삭제할 수 있다. (*** 중요! *** . 을 찍어서 불러온다.)
+        ex) mem1.num, mem1.name, mem2.num, info1.empno, info1.sal ...
+        */
+
+        /*
+        object type의 특정 방을 참조해서 함수에 바로 사용하기
+        */
+        alert(mem2.addr);
+
+        
+    </script>
+</body>
+</html>
