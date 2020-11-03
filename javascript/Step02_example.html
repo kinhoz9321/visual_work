@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=`">
+    <title>Step02_example.html</title>
+</head>
+<body>
+    <h1>산술연산 예제</h1>
+    <input type="text" id="num1" placeholder="숫자 입력..."/>
+    <!--
+        함수는 버튼을 클릭 했을 때 동작하게 되어있다.
+    -->
+    <button onclick="plus();">+</button>
+    <button onclick="minus();">-</button>
+    <button onclick="x();">*</button>
+    <button onclick="n();">/</button>
+    <input type="text" id="num2" placeholder="숫자 입력..."/>
+    <span>=</span>
+    <strong id="result">0</strong>
+    <script>
+        function plus(){
+            var a=document.querySelector("#num1").value;
+            var b=document.querySelector("#num2").value;
+            var p = parseFloat(a) + parseFloat(b);
+            /* value 값을 읽어오면 무조건 문자열이다.
+            숫자 모양을 띄고 있는 문자열. */
+            document.querySelector("#result").innerText = p;
+        }
+        function minus(){
+            var a=document.querySelector("#num1").value;
+            var b=document.querySelector("#num2").value;
+            var m = parseFloat(a) - parseFloat(b);
+            /* value 값을 읽어오면 무조건 문자열이다.
+            숫자 모양을 띄고 있는 문자열. */
+            document.querySelector("#result").innerText = m;
+        }
+        function x(){
+            var a=document.querySelector("#num1").value;
+            var b=document.querySelector("#num2").value;
+            var x = parseFloat(a) * parseFloat(b);
+            /* value 값을 읽어오면 무조건 문자열이다.
+            숫자 모양을 띄고 있는 문자열. */
+            document.querySelector("#result").innerText = x;
+        }
+        function n(){
+            var a=document.querySelector("#num1").value;
+            var b=document.querySelector("#num2").value;
+            var n = parseFloat(a) / parseFloat(b);
+            /* value 값을 읽어오면 무조건 문자열이다.
+            숫자 모양을 띄고 있는 문자열. */
+            document.querySelector("#result").innerText = n;
+        }
+    </script>
+    <script>
+            //1. id 가 num1 인 input 요소에 입력한 value 값 읽어오기
+
+            //2. id 가 num2 인 input 요소에 입력한 value 값 읽어오기
+
+            /*3. 위에서 읽어온 두 값을 + 연산해서 결과값 얻어내기
+            parseFloat 사용해서 문자값을 숫자값으로 바꿔주기!
+            var apple = parseFloat(a) + parseFloat(b);*/
+          
+            //4. 얻어낸 결과 값을 id 가 result 인 요소에 innerText 로 넣어주기
+    </script>
+</body>
+</html>
+<!--
+    산술연산 예제는 꼭 집에서 혼자 보지말고 만들어보기!
+-->

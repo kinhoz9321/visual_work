@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz2.html</title>
+</head>
+<body>
+    <button id="countBtn" onclick="increase()">0</button>
+    <script>
+        var count=0;
+        function increase(){
+            count=count+1;
+            document.querySelector("#countBtn").innerText = count;
+        }
+    </script>
+</body>
+</html>
+<!--
+    버튼을 누를 때 마다 button의 innerText가 1씩 증가되게 해보세요
+
+    정말.. 힘들게 푼.. 더 연습하자. 논리력이 없나봉...ㅠㅠ
+-->
