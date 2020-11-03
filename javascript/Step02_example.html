@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+</head>
+<body>
+    <h1>산술연산 예제</h1>
+    <input type="text" id="num1" placeholder="숫자 입력..."/>
+    <button onclick="plus();">+</button>
+    <button onclick="minus();">-</button>
+    <input type="text" id="num2" placeholder="숫자 입력..."/>
+    <span>=</span>
+    <strong id="result">0</strong>
+    <script>
+        function minus(){
+            //1. id 가 num1 인 input 요소에 입력한 value 값 읽어오기
+            var a=document.querySelector("#num1").value; // string type
+            //2. id 가 num2 인 input 요소에 입력한 value 값 읽어오기 
+            var b=document.querySelector("#num2").value; // string type
+            //3. 위에서 읽어온 두값을 - 연산해서 결과값 얻어내기
+            var result = parseFloat(a) - parseFloat(b);
+            //4. 얻어낸 결과 값을 id 가 result 인 요소에 innerText 로 넣어주기
+            document.querySelector("#result").innerText = result;
+        }
+
+        function plus(){
+            //1. id 가 num1 인 input 요소에 입력한 value 값 읽어오기
+            var a=document.querySelector("#num1").value; // string type
+            //2. id 가 num2 인 input 요소에 입력한 value 값 읽어오기 
+            var b=document.querySelector("#num2").value; // string type
+            //3. 위에서 읽어온 두값을 + 연산해서 결과값 얻어내기
+            var result = parseFloat(a) + parseFloat(b);
+            //4. 얻어낸 결과 값을 id 가 result 인 요소에 innerText 로 넣어주기
+            document.querySelector("#result").innerText = result;
+        }
+    </script>
+</body>
+</html>
