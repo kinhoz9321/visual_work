@@ -6,7 +6,7 @@
     <title>Step02_quiz.html</title>
 </head>
 <body>
-    <button id="countBtn">0</button>
+    <button id="countBtn" onclick="increase();">0</button>
     <script>
         /*  [ hint ]
             var count=0;
@@ -16,6 +16,15 @@
         */
         //버튼을 누를때마다 button 의 innerText 가 1씩 증가 되게 해 보세요.
 
+        //페이지가 로딩되는 시점에 count  값을 0 으로 초기화 하고 
+        var count=0;
+        //함수가 호출될때 마다
+        function increase(){
+            //count 값을 1 증가 시키고
+            count=count+1;
+            //버튼의 innerText 에 count 값을 출력하기 
+            document.querySelector("#countBtn").innerText=count;
+        }    
     </script>
 </body>
 </html>
