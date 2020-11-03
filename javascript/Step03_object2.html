@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_object2.html</title>
+</head>
+<body>
+    <script>
+        var mem1={num:1, name:"김구라", addr:"노량진"};
+        
+        var mem2=mem1;
+
+        mem1.name="개구라";
+
+        var a=mem1.name; //개구라
+        var b=mem2.name; //김구라? 개구라? 
+
+        var num1=10;
+        var num2=num1;
+
+        num1=20;
+
+        var c=num1; //20
+        var d=num2; //10 ?  20 ? 
+
+    </script> 
+</body>
+</html>
