@@ -8,9 +8,13 @@
 <body>
     <button id="countBtn" onclick="increase()">0</button>
     <script>
+        // 페이지가 로딩되는 시점에 count 값을 0으로 초기화하고
         var count=0;
+        //함수가 호출될 때 마다
         function increase(){
+            //카운트 값을 1 증가시키고
             count=count+1;
+            //버튼의 이너텍스트에 카운트 값을 출력하기
             document.querySelector("#countBtn").innerText = count;
         }
     </script>
@@ -20,4 +24,6 @@
     버튼을 누를 때 마다 button의 innerText가 1씩 증가되게 해보세요
 
     정말.. 힘들게 푼.. 더 연습하자. 논리력이 없나봉...ㅠㅠ
+
+    함수 안에서 만들어진 변수는 참조도 안되고 쓸수도 없다.
 -->
