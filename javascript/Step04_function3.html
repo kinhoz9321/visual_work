@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function3.html</title>
+</head>
+<body>
+    <script>
+        //ECMA5
+        function showSum(num1, num2){
+            var sum=num1+num2;
+            var result=num1+" 과 "+num2+" 의 합은 "+sum+" 입니다.";
+            console.log(result);
+        }
+
+        //ECMA6 버전의 javascript (더 편하다)
+        function showSum2(num1, num2){
+            let sum=num1+num2;
+            let result=`${num1} 과 ${num2} 의 합은 ${sum} 입니다.`;
+            console.log(result);
+        }
+        
+        // 결과를 웹브라우저의 콘솔창에서 확인하기
+        showSum(10,20);
+        showSum(100, 200);
+
+        showSum2(30, 40);
+        showSum2(300, 400);
+
+        //오브젝트를 사용해서 함수의 매개변수에 전달하기
+        let mem1={num:1, name:"김구라", addr:"노량진"};
+        let mem2={num:2, name:"해골", addr:"행신동"};
+        let mem3={num:5, name:"홍주", addr:"남구"};
+
+        function showInfo(obj){
+            let num=obj.num;
+            let name=obj.name;
+            let addr=obj.addr;
+            let info=`번호는 ${num} 이고 이름은 ${name} 이고 주소는 ${addr}`;
+            console.log(info);
+            //콘솔창 출력
+        }
+
+        showInfo(mem1);
+        showInfo(mem2);
+        showInfo({num:3, name:"원숭이", addr:"상도동"});
+        showInfo({
+            num:4,
+            name:"주뎅이",
+            addr:"봉천동"
+        });
+        /*
+        여러개의 값을 전달할 때 , 를 이용할 필요없이 오브젝트를 사용해서 보낼수도 있다.
+        showInfo 3,4는 오브젝트를 바로 만들어서 대입해버렸다.
+        참조값을 전달한 거나 마찬가지?
+        콘솔에서 찾을 때도 전체를 적어서 찾아야 함.
+        */
+
+        function showInfo2(obj){
+            let info=`번호는 ${obj.num} 이고 이름은 ${obj.name} 이고 주소는 ${obj.addr}`;
+            console.log(info);
+        }
+        // 직접 참조해서 씀
+
+        showInfo2(mem1);
+        showInfo2("메롱"); //제대로 동작하지 않는다. undefined
+        showInfo2(mem3);
+        
+    </script>
+    <!--
+        console.log 콘솔창에 출력하기 위해 사용.
+        개발자가 테스트 하기 위해 사용한다.
+        ` 이렇게도 문자열을 만들 수 있다.
+
+        ECMA5와 ECMA6의 차이
+        var 대신에 let을 씀. 둘은 차이가 있다.
+        문자열을 back tick ` 으로 만들 수 있다.
+        `${num1} 과 ${num2} 의 합은 ${sum} 입니다.`;
+    -->
+</body>
+</html>

@@ -14,7 +14,8 @@
             //1. id가 inputName인 요소에 입력한 value
             var a=document.querySelector("#inputName").value;
             //2. welcome()함수 호출하면서 name 변수 전달하기
-            welcome(a); // 이 때 웰컴함수를 불러와서 var a를 호출하는 건 알겠는데 welcome(abc)는 어떻게 불러오는지 모르겠당
+            // welcome(a); // 이 때 웰컴함수를 불러와서 var a를 호출하는 건 알겠는데 welcome(abc)는 어떻게 불러오는지 모르겠당
+            welcome2(a);
             //3. id가 inputName 인 요소에 입력한 문자열 지우기
             document.querySelector("#inputName").value="";
             //4. id가 inputName 인 요소에 포커스 주기
@@ -22,14 +23,27 @@
         }
             
 
-        // 함수의 인자를 전달 받을 매개변수 arg 정의하기
-        function welcome(gg){
+        // 함수의 인자를 전달 받을 * 매개변수 arg *  정의하기 (옛날 코드는 이렇게 작성하는 것이 많다.)
+        function welcome(arg){
             //gg에는 함수를 호출하면서 전달한 값이 들어있다.
-            alert(gg +" 님 환영합니다.");
+            alert(arg +" 님 환영합니다.");
         }
+
+        //위와 같은 동작을 하는 함수를 아래와 같이 정의할 수도 있다.(최근 코드는 이렇게 작성하는 것이 많다.)
+        var welcome2=function(arg){
+            alert(arg+"님 환영합니다.");
+            //매개변수는 이 안에서만 사용할 수 있다.
+        };
     </script>
 </body>
 </html>
 <!--
     함수의 호출에 대해 공부하기. 잘 모르겠음.
+
+    var a - welcome(var a) - welcome(arg=var a)
+    3단계의 전달 잘 이해하기.
+    매개변수는 전달하는 값을 받는다.
+    arg=var a 대입연산자를 연상하기.
+
+    매개변수 != 함수의 인자
 -->
