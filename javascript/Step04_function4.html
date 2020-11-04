@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function4.html</title>
+</head>
+<body>
+    <script>
+        // undefined 를 리턴해주는 함수 
+        function a(){
+            console.log("a()  함수 호출됨");
+        }
+        // number type 을 리턴해 주는 함수
+        function b(){
+            console.log("b() 함수 호출됨");
+            return 10;
+        }
+        // string type  을  리턴해 주는 함수 
+        function c(){
+            console.log("c() 함수 호출됨");
+            return "kim";
+        }
+        // object type 을 리턴해 주는 함수 
+        function d(){
+            console.log("d() 함수 호출됨");
+            let obj={num:1, name:"김구라", addr:"노량진"};
+            return obj;
+        }
+        // array type 을 리턴해 주는 함수
+        function e(){
+            console.log("e() 함수 호출됨");
+            let arr=["김구라","해골","원숭이"];
+            return arr;
+        }
+        //회원 목록을 array 로 리턴하는 함수 
+        function getData(){
+            let data=[
+                {num:1, name:"김구라", isMan:true},
+                {num:2, name:"해골", isMan:false},
+                {num:3, name:"원숭이", isMan:true}
+            ];
+            return data;
+        }
+    </script>
+</body>
+</html>
