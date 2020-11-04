@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_object3.html</title>
+</head>
+<body>
+    <script>
+        //오브젝트를 작성할 때 이렇게 작성하기도 한다.
+        // 오브젝트 안에는 함수가 들어가기도 한다.
+        var car1={
+            name:"소나타", 
+            color:"silver", 
+            drive:function(){
+                alert(this.name+" 이(가) 달려요");
+            }
+        //여기서 this 는 자기자신의 오브젝트를 가리킨다.(예약어) 여기서는 car1
+        //car1.name = 소나타
+        // 파란색으로 나오는 것은 예약어.
+        };
+        var car2={name:"산타페", 
+            color:"white", 
+            drive:function(){
+                alert(this.name+" 이(가) 달려요");
+            }
+        };
+        var car3={};
+        car3.name="포터";
+        car3.color="blue";
+        car3.drive=function(){
+            alert(this.name+" 이(가) 달려요");
+        };
+        
+        //car1 object의 특정방 참조
+        var a=car1.name;
+        var b=car1.color;
+        //car2 object의 특정방 참조
+        var c=car2.name;
+        var d=car2.color;
+        //car1, car2 object에 있는 drive() 함수 호출
+        car1.drive();
+        car2.drive();
+    </script>
+</body>
+</html>
+
+<!--
+    함수의 참조와 호출 구분하기
+    어려우니 다시한번 공부하기. 아니 더 많이 공부하기!
+-->
