@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function.html</title>
+</head>
+<body>
+    <h1>function 테스트중...</h1>
+    <button onclick="keepBeer();">맥주 보관하기</button>
+    <button onclick="keepBeer2();">맥주 보관하기2</button>
+    <button onclick="person.keepBeer();">맥주 보관하기3</button>
+    <script>
+        /*
+            function type
+            - 특정 시점에 일괄 실행할 javascript 를 모아 놓은 역활을 한다.
+            - 함수도 heap 영역에 만들어지는 객체이다.
+            - 함수를 호출하면서 값을 필요시 전달할수도 있다.
+            - 함수를 호출하면 반드시 어떤값을 해당위치로 return 해 준다. 
+        */
+
+        // keepBeer 라는 이름의 함수 만들기 
+        function keepBeer(){
+            //맥주를 냉장고에 보관하기 
+            console.log("냉장고 문을 연다.");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+        // 익명의 함수를 만들어서 keepBeer2 라는 변수에 참조값 대입하기 
+        var keepBeer2=function(){
+            //맥주를 냉장고에 보관하기 
+            console.log("냉장고 문을 연다.");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        };
+
+        var person={
+            name:"김구라",
+            keepBeer:function(){
+                //맥주를 냉장고에 보관하기 
+                console.log("냉장고 문을 연다.");
+                console.log("맥주를 넣는다.");
+                console.log("냉장고 문을 닫는다.");
+            }
+        };
+    </script>
+</body>
+</html>
