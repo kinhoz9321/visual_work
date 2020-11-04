@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function.html</title>
+</head>
+<body>
+    <h1>function 테스트 중...</h1>
+    <button onclick="keepbeer();">맥주 보관하기</button>
+    <button onclick="keepbeer2();">맥주 보관하기2</button>
+    <button onclick="person.keepbeer();">맥주 보관하기3</button>
+    <!-- onclick 안은 자바스크립트 영역 누를 때 마다 자바스크립트가 실행됨. -->
+    <script>
+        /*
+        function type
+        - 특정 시점에 일괄 실행한 javascript 를 모아 놓은 역할을 한다.
+        - 함수도 heap 영역에 만들어지는 객체이다.
+        - 함수를 호출하면서 값을 필요시 전달할 수도 있다.
+        - 함수를 호출하면 반드시 어떤 값을 해당위치로 return해 준다
+        */
+
+        function keepbeer(){
+            //맥주를 냉장고에 보관하기
+            console.log("냉장고 문을 연다");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+        
+        //익명의 함수를 만들어서 keepbeer2 라는 변수에 참조값 대입하기
+        //이 방법을 더 추천한다?
+        var keepbeer2=function(){
+            //맥주를 냉장고에 보관하기
+            console.log("냉장고 문을 연다");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+        // 앞으로 내가 사용할 함수가 오브젝트의 특정 방 안에 들어갈 수도 있다.
+        var person={
+            name:"김구라",
+            keepbeer:function(){
+                //맥주를 냉장고에 보관하기
+                console.log("냉장고 문을 연다");
+                console.log("맥주를 넣는다.");
+                console.log("냉장고 문을 닫는다.");
+            } // ;쓰지 말기
+        };
+    </script>
+</body>
+</html>

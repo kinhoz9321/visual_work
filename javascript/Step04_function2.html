@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function2.html</title>
+</head>
+<body>
+    <h1>function 테스트 중...</h1>
+    <input type="text" id="inputName" placeholder="이름입력"/>
+    <button onclick="enter();">입장하기</button>
+    <script>
+        function enter(){
+            //1. id가 inputName인 요소에 입력한 value
+            var a=document.querySelector("#inputName").value;
+            //2. welcome()함수 호출하면서 name 변수 전달하기
+            welcome(a); // 이 때 웰컴함수를 불러와서 var a를 호출하는 건 알겠는데 welcome(abc)는 어떻게 불러오는지 모르겠당
+            //3. id가 inputName 인 요소에 입력한 문자열 지우기
+            document.querySelector("#inputName").value="";
+            //4. id가 inputName 인 요소에 포커스 주기
+            document.querySelector("#inputName").focus();
+        }
+            
+
+        // 함수의 인자를 전달 받을 매개변수 arg 정의하기
+        function welcome(gg){
+            //gg에는 함수를 호출하면서 전달한 값이 들어있다.
+            alert(gg +" 님 환영합니다.");
+        }
+    </script>
+</body>
+</html>
+<!--
+    함수의 호출에 대해 공부하기. 잘 모르겠음.
+-->
