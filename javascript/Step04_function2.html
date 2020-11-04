@@ -14,7 +14,8 @@
             //1. id 가 inputName 인 요소에 입력한 문자열 읽어오기
             var a=document.querySelector("#inputName").value;
             //2. welcome() 함수 호출하면서 전달하기
-            welcome(a);
+            //welcome(a); //아래의 welcome2() 함수도 동작이 같다 
+            welcome2(a);
             //3. id 가 inputName 인 요소에 입력한 문자열 지우기
             document.querySelector("#inputName").value="";
             //4. id 가 inputName 인 요소에 포커스 주기
@@ -25,6 +26,11 @@
             //arg 에는 함수를 호출하면서 전달한 값이 들어 있다. 
             alert(arg+" 님 환영합니다.");
         }
+
+        //위와 같은 동작을 하는 함수를 아래와 같이 정의할수도 있다. 
+        var welcome2=function(arg){
+            alert(arg+" 님 환영합니다.");
+        };
 
     </script>
 </body>
