@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_example.html</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <button onclick="b();">바꾸기</button>
+    <script>
+        function b(){
+            document.querySelectorAll("div")[0].innerText="바부";
+            document.querySelectorAll("div")[1].innerText="오늘도";
+            document.querySelectorAll("div")[2].innerText="자습할꺼지룽";
+            let four=document.querySelectorAll("div")[3];
+            four.innerText="콜라먹고싶어";
+            four.style.color="green";
+            
+            let five=document.querySelectorAll("div")[4];
+            five.innerText="★집에갈때맥주사가야지★";
+            five.style.color="red";
+        }
+    </script>
+</body>
+</html>

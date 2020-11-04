@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_function4.html</title>
+</head>
+<!--함수를 호출하면 반드시 어떤 값을 해당위치로  return 해준다.-->
+<body>
+    <script>
+
+        function a(){ //undefined로 바뀜 리턴 예약어다음에 아무것도 없었기 때문
+            console.log("a() 함수 호출됨");
+        }
+        //넘버 타입을 리턴해주는 함수
+        function b(){ //10로 바뀜
+            console.log("b() 함수 호출됨");
+            return 10;
+        }
+        //스트링 타입을 리턴해주는 함수
+        function c(){ //"kim"로 바뀜
+            console.log("c() 함수 호출됨");
+            return "kim";
+        }
+        // return 예약어
+    </script>
+    <!--
+        함수를 호출하고 나서 어떤 값으로 되돌려준다. 함수의 리턴값.
+        자바스크립트는 함수의 리턴값을 반드시 되돌려준다. 아무것도 없으면 언디파인드로 되돌아옴.
+        리턴이라는 예약어는 어떤 값을 돌려줄 때 사용을 한다.
+        모든 데이터 타입을 돌려줄 수 있다. 
+
+    -->
+    <script>
+        //오브젝트 타입을 리턴해주는 함수
+        function d(){
+            console.log("d() 함수 호출됨");
+            let obj={num:1, name:"김구라", addr:"노량진"};
+            return obj;
+        }
+
+        function e(){
+            console.log("e() 함수 호출됨");
+            let array=["김구라","해골","원숭이","주뎅이"];
+            return array;
+        }
+
+        //회원 목록을 array로 리턴하는 함수
+        function getData(){
+            let data=[
+                {num:1, name:"김구라", isMan:true},
+                {num:2, name:"해골", isMan:false},
+                {num:3, name:"원숭이", isMan:true}
+            ];
+            return data;
+        }
+    </script>
+    <!--
+        d()를 호출하면 오브젝트의 참조값이 호출된다.
+        d함수는 호출될때마다 만들어서 리턴해준다.
+    -->
+</body>
+</html>

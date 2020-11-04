@@ -9,6 +9,7 @@
     <script>
         //ECMA5
         function showSum(num1, num2){
+            //1),를 사용해서 매개변수를 여러개 만들고
             var sum=num1+num2;
             var result=num1+" 과 "+num2+" 의 합은 "+sum+" 입니다.";
             console.log(result);
@@ -23,6 +24,7 @@
         
         // 결과를 웹브라우저의 콘솔창에서 확인하기
         showSum(10,20);
+        //2) 콘솔로 매개변수 불러오기
         showSum(100, 200);
 
         showSum2(30, 40);
@@ -77,6 +79,7 @@
         var 대신에 let을 씀. 둘은 차이가 있다.
         문자열을 back tick ` 으로 만들 수 있다.
         `${num1} 과 ${num2} 의 합은 ${sum} 입니다.`;
+        +와 ""의 사용이 사라짐 대신 ${ }를 사용
     -->
 </body>
 </html>
