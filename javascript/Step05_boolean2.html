@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_boolean2.html</title>
+</head>
+<body>
+    <h1>boolean type 테스트중</h1>
+    <p id="info"></p>
+    <script>
+        let isMan=confirm("남자이면 확인을 누르세요.");
+        /*
+        isman에 true가 들어있으면 확인을 누르면 당신은 남자이군요를 출력하고
+        false가 들어있으면 취소를 누르면 당신은 여자이군요를 출력하세요.
+        */
+        // if(isMan==true){
+        //     document.querySelector("#info").innerText="당신은 남자이군요.";
+        // };
+        // if(isMan==false){
+        // document.querySelector("#info").innerText="당신은 여자이군요.";
+        // };
+
+        //*** 위의 if문은 if~else문으로 바꿀 수 있다. ***
+        if(isMan==true)/*그렇다면*/{
+            document.querySelector("#info").innerText="당신은 남자이군요.";
+        }else/*그렇지 않으면*/{
+            document.querySelector("#info").innerText="당신은 여자이군요.";
+        };
+
+    </script>
+</body>
+</html>
+<!--
+    boolean type 변수명을 지을 때 대화식으로 지으면 읽기가 편하다.
+    가독성이 좋아짐.
+    ex) isWait(만일 기다릴거라면), isRun(만일 달릴거라면)
+    변수명은 중요하다. 변수명 잘 짓기!
+
+    ***
+    test는 하나하고 확인하고 하나하고 확인하는게 좋다
+
+    //함수를 이용해서 해보기
+
+    * if ~ else 문 ex)로그인 처리
+    if(){
+
+    }else{
+
+    }
+
+    *** boolean 타입을 어떻게 쓰느냐에 대한 예시로 if문을 살펴본 것
+    더 자세한 것은 if문을 배울 때 배울 것
+-->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_boolean.html</title>
+</head>
+<body>
+    <h1>boolean type 테스트</h1>
+    <p id="info"></p>
+    <script>
+        let isFirst=confirm("첫 방문이면 확인을 누르세요");
+
+        if(isFirst){
+            document.querySelector("#info").innerText="첫방문을 환영합니다!";
+        }
+
+
+    </script>
+</body>
+</html>
+<!--confirm 빌트인함수
+        /*
+        확인 = true
+        취소 = false
+        둘 중의 하나를 물어보고 결과의 값에 따라 웹브라우저의 반응이 달라지게 만듬. 
+        ex) 송금하시겠습니까? 페이지를 이동하시겠습니까? 등등...
+        */
+
+        웹브라우저야 아래의 코드는 만일 isFirst에 true 가 들어 있을 때만 수행해주삼
+        document.querySelector("#info").innerText="첫방문을 환영합니다!";
+
+        if 예약어
+
+        if 문의 기본 동작
+        if(true)가 참조되면 수행을 한다.
+        if(false)가 참조되면 수행을 안한다. 건너뜀. 무시.
+        boolean 타입 데이터가 필요. 
+        boolean 타입 데이터는 if문과 함께 많이 쓰인다.
+        if 문 어떤 코드 블럭을 무조건 수행하는 게 아니고 조건부로 수행하고 싶을 때. 사용.
+        * if(isFirst==true) = if(isFirst)
+
+        ****단일 if문
+        if(){
+
+        }
+
+
+        -->
