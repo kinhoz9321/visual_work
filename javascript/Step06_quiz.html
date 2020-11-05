@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_quiz.html</title>
+</head>
+<body>
+    <h1>array 테스트 중</h1>
+    <input type="text" id="inputName" placeholder="이름입력"/>
+    <button onclick="saveToarray();">배열에 저장하기</button><br/>
+    <button onclick="printToConsole();">배열에 저장된 내용 콘솔에 순서대로 출력하기</button>
+    <button onclick="printToList();">ul 요소에 출력하기</button>
+    <h2>이름 목록입니다.</h2>
+    <ul id="nameList">
+
+    </ul>
+    <div id="myDiv">
+
+    </div>
+
+    <script>
+        //입력한 이름을 저장할 예정인 배열(array) 미리 만들어 놓기
+        let names=[];
+
+        function saveToarray(){
+            names.push(document.querySelector("#inputName").value);
+            document.querySelector("#inputName").value="";//추가
+        };
+
+        function printToConsole(){
+            for(let i=0; i<names.length; i++){
+                console.log(names[i]);
+            }
+        };
+
+        function printToList(){
+            for(let i=0; i<names.length; i++){
+                let li1=document.createElement("li");
+                li1.innerText=names[i];
+            
+                document.querySelector("#nameList").append(li1);
+            }
+
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+    칭찬받았다*^^*
+    코드가 안써지면 주석쓰기
+    function saveToarray()
+    1) input 요소에 입력한 문자열 읽어오기
+    let name=document.querySelector("#inputName").value;
+    2) 읽어온 문자열을 배열에 추가하기
+    names.push(name);
+
+    function printToConsole()
+    1) for문 이용하기 i값을 이용해서 배열의 방번호쓰기
+    배열에 저장을 하나도 안해서 0이 참조되면 순서대로 출력하기 버튼의 실행순서가 한번도 안들어간다.    
+
+    *** document.createElement("div")
+    문서를 만드는 함수명
+
+    let p1=document.createElement("p");
+undefined
+p1
+<p>​</p>​
+
+document.querySelector("#myDiv").append
+document.querySelector("#myDiv").append(p1);
+
+
+다시 연습하기
+for문의 사용법 더 생각하기!
+-->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_array2.html</title>
+</head>
+<body>
+    <h1>array type 테스트</h1>
+    <button onclick="printNames();">출력하기</button>
+    <script>
+        // ***외우기***
+        // for(let i=0; i<10; i++(변수 안에 있는 값을 1씩 증가시키는 연산자 이게 없으면 1씩 증가 안함. 중요!!!)){
+        //     console.log(i+" 번째 수행됨");
+
+        // }
+        /*for(let (i=0; i<20;)20만큼 반복 i++){
+            블럭안의 내용이 최대의 속도로 반복함
+        }*/
+
+        let names=["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+        
+        // function printNames(){
+            
+        //     console.log(names[]);
+        // };
+        function printNames(){
+        for(let i=0; i<names.length; i++){
+            console.log(names[i]);
+        }
+        };
+        //i<n = 배열의 방 사이즈 -1 ex)names.length ***
+        // 배열과 함께 사용하는 기본이 되는 전형적인 반복문 형식 ***
+    </script>
+</body>
+</html>
+<!--
+   배열을 length에 관계없이 반복하게 만들기. 자동화 시키기.
+
+   콘솔에서 변경한 내용은
+   페이지를 새로고침하거나 이동하기 전까지 변수의 값은 유지된다.
+
+-->
