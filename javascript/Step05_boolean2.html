@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_boolean.html</title>
+</head>
+<body>
+    <h1>boolean type 테스트중...</h1>
+    <p id="info"></p>
+    <script>
+        let isMan=confirm("남자이면 확인을 누르세요.");
+        /*
+            isMan 에 true 가 들어 있으면 
+            "당신은 남자 이군요!" 를 p 요소의 innerText 로 출력하고
+            isMan 에 false 가 들어 있으면 
+            "당신은 여자 이군요!" 를 p 요소의 innerText 로 출력해 보세요.
+        */
+        // if(isMan == true){
+        //     document.querySelector("#info").innerText="당신은 남자 이군요!";
+        // }
+        
+        // if(isMan == false){
+        //     document.querySelector("#info").innerText="당신은 여자 이군요!";
+        // }
+        
+        //위의 if  문은 if~else 문으로 바꿀수 있다.
+        // if(isMan==true){
+        //     document.querySelector("#info").innerText="당신은 남자 이군요!";
+        // }else{
+        //     document.querySelector("#info").innerText="당신은 여자 이군요!";
+        // }
+
+        if(isMan){
+            document.querySelector("#info").innerText="당신은 남자 이군요!";
+        }else{
+            document.querySelector("#info").innerText="당신은 여자 이군요!";
+        }
+    </script>
+</body>
+</html>
