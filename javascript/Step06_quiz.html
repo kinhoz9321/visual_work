@@ -13,7 +13,7 @@
     <button onclick="printToList();">저장된 내용 ul 요소에 출력하기</button>
     <h2>이름 목록입니다.</h2>
     <ul id="nameList">
-
+        
     </ul>
     <div id="myDiv">
 
@@ -43,7 +43,17 @@
             document.querySelector("#myDiv").append(p1);
         */
         function printToList(){
-
+            //ul 의 자식 요소를 모두 삭제 
+            document.querySelector("#nameList").innerText="";
+            //배열의 방의 갯수 만큼 li 가 만들어 져야 한다? 
+            for(let i=0; i<names.length; i++){
+                //li 를 만들어서 
+                let li=document.createElement("li");
+                //innerText 를 출력하고
+                li.innerText=names[i];
+                //원하는 곳에 낑가 넣기
+                document.querySelector("#nameList").append(li);
+            }
         }
 
     </script>
