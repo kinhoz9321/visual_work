@@ -35,10 +35,15 @@
         };
 
         function printToList(){
+            //이름이 누적되지 않게 하는 법
+            document. querySelector("#nameList").innerText="";
+                //1. 배열의 방의 갯수만큼 li 만들기 반복실행 = for문
             for(let i=0; i<names.length; i++){
+                //li를 만들어서  //동적인 문서객체 만들기
                 let li1=document.createElement("li");
+                //innerText를 출력하기 // 
                 li1.innerText=names[i];
-            
+                //원하는 곳에 낑겨넣기 //append
                 document.querySelector("#nameList").append(li1);
             }
 
