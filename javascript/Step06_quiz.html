@@ -11,6 +11,7 @@
     <button onclick="saveToArray();">배열에 저장하기</button>
     <button onclick="printToConsole();">저장된 내용 콘솔에 순서대로 출력하기</button>
     <button onclick="printToList();">저장된 내용 ul 요소에 출력하기</button>
+    <button onclick="printToList2();">저장된 내용 ul 요소에 출력하기2</button>
     <h2>이름 목록입니다.</h2>
     <ul id="nameList">
         
@@ -59,7 +60,14 @@
         function printToList2(){
             //ul 의 자식 요소를 모두 삭제 
             document.querySelector("#nameList").innerText="";
-            
+            names.forEach(function(item){
+                //li 를 만들어서 
+                let li=document.createElement("li");
+                //innerText 를 출력하고
+                li.innerText=item;
+                //원하는 곳에 낑가 넣기
+                document.querySelector("#nameList").append(li);
+            });
         }
     </script>
 </body>
