@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_DrawPanel.html</title>
+    <style>
+        canvas{
+            border: 1px dashed gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>그림판</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <br/>
+    <input type="color" id="inputColor"/>
+    <script>
+        //canvas  요소의 참조값 얻어오기 
+        let canvas=document.querySelector("#myCanvas");
+        //canvas 에 렌더링 할수 있는 도구(context) 의 참조값 얻어오기 
+        let context=canvas.getContext("2d");
+
+        //선의 굵기
+        context.lineWidth=10; 
+        //선의 시작과 끝을 둥글게
+        context.lineCap="round";
+        //선의 교차점을 둥글게
+        context.lineJoin="round";
+        //선의 색상을 저장할 변수 만들고 "black" 으로 초기화 
+        let color="black";
+        //선의 색상 지정하기 
+        context.strokeStyle=color;
+
+        // context.beginPath();
+        // context.moveTo(100, 100);
+        // context.lineTo(200, 200);
+        // context.lineTo(200, 100);
+        // context.stroke();
+        // context.closePath();
+
+        //현재 그림을 그리고 있는지 여부
+        let isDraw=false; //초기값은 일단 false 로 지정 
+
+        canvas.addEventListener("mousedown", function(event){
+            //그리고 있는 상태로 바꿔준다.
+            isDraw=true;
+            //이벤트가 일어난곳의 좌표
+            let x=event.offsetX;
+            let y=event.offsetY;
+            //mousedown 이벤트가 일어난 지점에서 부터 그릴 준비를 한다. 
+            context.beginPath();
+            context.moveTo(x, y);
+            //변수에 저장된 값으로 색상 지정
+            context.strokeStyle=color;
+        });
+        //canvas 에 mousemove 이벤트 처리 
+        canvas.addEventListener("mousemove", function(event){
+            //만일 현재 그림을 그리고 있는 상태 일때
+            if(isDraw == true){
+                //이벤트가 일어난곳의 좌표
+                let x=event.offsetX;
+                let y=event.offsetY;
+                context.lineTo(x, y);
+                context.stroke();
+            }
+        });
+
+        canvas.addEventListener("mouseup", function(){
+            //더이상 그려지지 않도록 상태값을 바꿔준다. 
+            isDraw=false;
+        });
+
+        document.querySelector("#inputColor")
+            .addEventListener("change", function(){
+                // color 변수에 현재 value 값을 대입한다. 
+                color=this.value;
+            });
+    </script>
+</body>
+</html>
