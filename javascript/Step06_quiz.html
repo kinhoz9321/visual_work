@@ -9,8 +9,9 @@
     <h1>array 테스트 중</h1>
     <input type="text" id="inputName" placeholder="이름입력"/>
     <button onclick="saveToarray();">배열에 저장하기</button><br/>
-    <button onclick="printToConsole();">배열에 저장된 내용 콘솔에 순서대로 출력하기</button>
-    <button onclick="printToList();">ul 요소에 출력하기</button>
+    <button onclick="printToConsole();">배열에 저장된 내용 콘솔에 순서대로 출력하기</button><br/>
+    <button onclick="printToList();">for문 ul 요소에 출력하기</button><br/>
+    <button onclick="printToList2();">forEach ul 요소에 출력하기</button>
     <h2>이름 목록입니다.</h2>
     <ul id="nameList">
 
@@ -46,8 +47,17 @@
                 //원하는 곳에 낑겨넣기 //append
                 document.querySelector("#nameList").append(li1);
             }
+        };
 
-        }
+        // 다시 살펴보기!
+        function printToList2(){
+            document. querySelector("#nameList").innerText="";
+            names.forEach(function(item){
+                let li1=document.createElement("li");
+                li1.innerText=item;
+                document.querySelector("#nameList").append(li1);
+            })
+        };
     </script>
 
 </body>

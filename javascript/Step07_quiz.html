@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_quiz.html</title>
+    <style>
+        .box{
+            width: 100px; /*폭*/
+            height: 100px; /*높이*/
+            background-color: darkseagreen;
+            border: 1px solid red; /*경계선*/
+            float:left; /*새로운용어*/
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 테스트 중</h1>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        /*
+        hint
+
+        1. for
+        2. document.querySelectorAll("div")[i]addEventListener();
+        3. this.innerText="clicked";
+        */
+        /*
+        실패
+            // for(i=0; i<div.length; i++){
+            //     document.querySelectorAll("div")[i].addEventListener("click", function(){
+            //         document.querySelectorAll("div")[i].innerText="clicked";
+            // });
+            // };
+            
+            실패
+            // for(i=0; i<"div"; i++){
+            // document.querySelectorAll("div")[i].addEventListener(
+            //     "click",function(){
+            //         this.innerText="clicked!";
+            //     }
+            // );
+            // };
+            
+            실패
+            // for(i=0; i<document.querySelectorAll("div"); i++){
+            //     document.querySelectorAll("div")[i].addEventListener(
+            //     "click",function(){
+            //         this.innerText="clicked!";
+            //     }
+            // );
+            // };
+            */
+            for(i=0; i<document.querySelectorAll("div").length; i++){
+            document.querySelectorAll("div")[i].addEventListener("click",function(){
+            this.innerText="clicked!"
+            });
+            };
+    </script>
+</body>
+</html>
+<!--
+    document.querySelectorAll("div").length = 20
+    1. 네모칸을 클릭한다
+
+    2. 네모칸에 clicked라는 innerText가 뜬다.
+
+    3. 네모칸 전부에 뜨게 해야한다. (반복문)
+
+    더 연구하긔...
+
+    forEach문 사용해보기
+    
+    function printToList2(){
+            document. querySelector("#nameList").innerText="";
+            names.forEach(function(item){
+                let li1=document.createElement("li");
+                li1.innerText=item;
+                document.querySelector("#nameList").append(li1);
+            })
+        };
+-->
+

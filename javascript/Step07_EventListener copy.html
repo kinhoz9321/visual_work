@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener.html</title>
+    <style>
+        .box{
+            width: 100px; /*폭*/
+            height: 100px; /*높이*/
+            background-color: darkseagreen;
+            border: 1px solid red; /*경계선*/
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 테스트</h1>
+    <button onclick="clicked();">눌러보셈</button> <br/>
+    <!-- 프로젝트가 커지면 쓰기가 어려워지는 패턴 -->
+    <button id="myBtn">눌러보셈2</button> <br/>
+    <div class="box" id="myDiv"></div>
+    <div class="box"></div>
+    <!--class는 여러 요소가 같은 속성을 가질 수 있다.-->
+    <script>
+        function clicked(){
+            alert("버튼을 눌렀네용?");
+        };
+        document.querySelector("#myBtn").addEventListener("click", function(){
+            alert("버튼을 눌렀네요?");
+        });
+        //string type "event name" 정해져있다., function type(call back function - 특정시점 이후에, 나중에 호출되는 함수) 추가 click=event onclick과 다르다. 정해져있는 걸 써야함.
+
+        // click 손으로 찍어도, 마우스로 찍어도 클릭이라고 표현.
+
+        document.querySelector("#myDiv").addEventListener("click",function(){
+            //document.querySelector("#myDiv").innerText="clicked!";
+            this.innerText="clicked!"
+            //this=document.querySelector("#myDiv")
+        });
+        /* 어떤 이벤트가 발생했을 때 호출된 함수 안에서 this는 이벤트가 일어난 바로 그 요소(div)를 가리킨다 이벤트가 발생했을 때 this는 자주 사용된다.*/
+
+
+    </script>
+    
+</body>
+</html>
+<!--
+addEventListener를 이벤트 리스너를 추가하겠다.
+조건문을 사용해서 클릭 한번하면 clicked! 뜨게하고 한번 더 클릭하면 글씨 사라지게 하기
+-->

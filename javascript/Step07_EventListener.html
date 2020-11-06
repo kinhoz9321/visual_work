@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener.html</title>
+</head>
+<body>
+    <h1>EventListener 테스트</h1>
+    <button onclick="clicked();">눌러보셈</button>
+    <!-- 프로젝트가 커지면 쓰기가 어려워지는 패턴 -->
+    <button id="myBtn">눌러보셈2</button>
+    <script>
+        function clicked(){
+            alert("버튼을 눌렀네용?");
+        };
+
+        //표현식에 익숙해지기
+
+        let myName="김구라";
+
+        (function(){
+            let yourName="해골";
+        })(); 
+        /* 즉시 실행 함수의 기본 형태
+        로컬지역 작업 참조도 안되고 수정도 안된다. */
+
+        function test(){
+            let ourName="원숭이";
+        };
+    </script>
+    <!--
+        ***
+        페이지가 로딩되는 시점에 만들어지는 함수들 * 글로벌 영역(global area) *에 만들어졌다고 표현.
+        글로벌 영역에 만들어진것들은 자바스크립트 실행환경에서 접근이 가능. 콘솔.
+        
+        (설명 추가)글로벌 변수(전역 변수)
+        자바스크립트 영역이면 어디서든지 호출가능, 참조가능.
+
+        함수 안에서 만들어지는 영역 - * 로컬 지역 (local area) *
+
+        여러사람이 함께 작업을 할 때 글로벌 영역에 작업을 해서는 안됨.
+        - 충돌날 가능성이 큼.
+        각각 독립적인 영역(로컬 지역)에서 작업을 해야한다.
+        콘솔창에서 참조되는 자원이 있으면 안됨.
+        자바스크립트에서 조작할 가능성이 있다. 그게 누구든.
+        존나 비밀스럽게 작업해야됨...
+
+        *** 글로벌 영역에 함수를 만들지 않고 이벤트를 처리하는 방법
+        ***
+    -->
+</body>
+</html>
