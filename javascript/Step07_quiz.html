@@ -8,7 +8,7 @@
         .box{
             width: 100px; /*폭*/
             height: 100px; /*높이*/
-            background-color: darkseagreen;
+            background-color: antiquewhite;
             border: 1px solid red; /*경계선*/
             float:left; /*새로운용어*/
         }
@@ -45,7 +45,7 @@
         3. this.innerText="clicked";
         */
         /*
-        실패
+            실패
             // for(i=0; i<div.length; i++){
             //     document.querySelectorAll("div")[i].addEventListener("click", function(){
             //         document.querySelectorAll("div")[i].innerText="clicked";
@@ -70,11 +70,41 @@
             // );
             // };
             */
-            for(i=0; i<document.querySelectorAll("div").length; i++){
-            document.querySelectorAll("div")[i].addEventListener("click",function(){
-            this.innerText="clicked!"
-            });
+            //로컬 사용 풀이 글로벌 변수를 사용하고 싶지 않을때 사용
+            (function(){
+                let divs=document.querySelectorAll("div");
+
+                for(let i=0; i<divs.length; i++){
+                divs[i].addEventListener("click",function(){
+                    this.innerText="clicked!"
+                });
             };
+            })();
+            // 모든 div의 참조값이 순서대로 들어있는 배열의 참조값 얻어오기
+            // let divs=document.querySelectorAll("div");
+
+            //변수 사용 풀이
+            // for(let i=0; i<divs.length; i++){
+            //     divs[i].addEventListener("click",function(){
+            //         this.innerText="clicked!"
+            //     });
+            // };
+
+            /* 강사님 풀이
+            for(let i=0; i<20; i++){
+                document.querySelectorAll("div")[i].addEventListener("click",function(){
+                    this.innerText="clicked!"
+                });
+            };
+
+            원래 홍주 풀이
+            for(let i=0; i<document.querySelectorAll("div").length; i++){
+                document.querySelectorAll("div")[i].addEventListener("click",function(){
+                    this.innerText="clicked!"
+                });
+            };
+        
+            */
     </script>
 </body>
 </html>
@@ -89,7 +119,7 @@
     더 연구하긔...
 
     forEach문 사용해보기
-    
+
     function printToList2(){
             document. querySelector("#nameList").innerText="";
             names.forEach(function(item){

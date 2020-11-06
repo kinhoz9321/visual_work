@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener3.html</title>
+</head>
+<body>
+    <h1>key event 처리</h1>
+    <input type="text" id="inputMsg" placeholder="메세지 입력"/>
+    <p id="result"></p>
+    <script>
+        document.querySelector("#inputMsg")
+            .addEventListener("keydown", function(event){
+                console.log(event);
+            });
+    </script>
+    <!--
+        keydown 포커스가 있고 무언가를 입력했을 때 이벤트 발생
+    -->
+</body>
+</html>

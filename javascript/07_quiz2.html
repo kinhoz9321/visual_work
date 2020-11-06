@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<!-- 채팅창.. 비슷한 거 만들기.. -->
+<body>
+    <input type="text" id="inputMsg" placeholder="메세지 입력"/>
+    <P id="result"></p>
+    <ul id="msgList">
+
+    </ul>
+    <script>
+        document.querySelector("#inputMsg")
+        .addEventListener("keydown", function(event){
+            console.log(event);
+            if(event.key=="Enter"){//if(event.keycode==13)
+                let text=document.querySelector("#inputMsg").value;
+                document.querySelector("#result").innerText=text;
+                let li1=document.createElement("li");
+                li1.innerText=text;
+                document.querySelector("#msgList").append(li1);
+                document.querySelector("#inputMsg").value="";
+            };
+        })
+    </script>
+</body>
+</html>
+<!--
+    ul안에 li 만들기
+    li에는 text.value가 들어가야함
+-->

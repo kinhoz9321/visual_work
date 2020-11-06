@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_quiz.html</title>
+</head>
+<body>
+    <h1>key event 처리</h1>
+    <input type="text" id="inputMsg" placeholder="메세지 입력"/>
+    <P id="result"></p>
+    <script>
+    //    let text= document.querySelector("#inputMsg")
+    //         .addEventListener("keydown", function(event){
+    //             console.log(event);
+    // //         });
+    //실패
+    //     document.querySelector("#result").innerText=text;
+        //     .addEventListener("keydown", function(event){
+        //         console.log(event);
+        // if(event.key=="enter"){
+        //     let text=document.querySelector("#inputMsg")
+
+        //     });
+        //잠깐 포기
+        // document.querySelector("#result").innerText=text;
+        // }
+
+            //실패..?
+    // document.querySelector("#inputMsg")
+    //     .addEventListener("keydown", function(event){
+    //             console.log(event);
+    //             if(event.key=="Enter"){
+    //                 let text=document.querySelector("#inputMsg").value;
+    //                 document.querySelector("#result").innerText=text;
+    //             }
+    //     });
+        //성공
+    document.querySelector("#inputMsg")
+        .addEventListener("keydown", function(event){
+            console.log(event);
+            if(event.key=="Enter"){//if(event.keycode==13)
+                let text=document.querySelector("#inputMsg").value;
+                document.querySelector("#result").innerText=text;
+                document.querySelector("#inputMsg").value="";
+            };
+        })
+    
+        /*
+    1. 만일 enter키를 눌렀다면
+    2. input 요소에 입력한 value 를 읽어와서
+    3. p 요소의 innerText로 출력하기
+    */
+    </script>
+</body>
+</html>

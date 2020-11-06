@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_EventListener2.html</title>
+    <style>
+        .wrapper{
+            width:500px;
+            height:500px;
+            border:1px solid red;
+            cursor:crosshair;/*css로 커서의 모양도 바꿀 수 있다*/
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener 테스트 중</h1>
+    <div class="wrapper" id="myDiv">
+
+    </div>
+    <script>
+        document.querySelector("#myDiv")
+            .addEventListener("mousemove", function(event/*매개변수*/){
+                console.log("mousemove!");
+                //event는 발생한 이벤트에 대한 정보를 담고 있는 object이다.
+                console.log(event);
+                //필요한 정보를 event object에서 얻어내서
+                let info=`x 좌표:${event.offsetX} y 좌표:${event.offsetY}`;
+                //이벤트가 발생한 div의 innerText로 출력하기
+                this.innerText=info;
+            });
+    </script>
+    <!--
+        모든 이벤트는 어떤 이벤트가 발생하면 그 발생한 이벤트에 대한 정보를 갖고있는 오브젝트가 만들어진다. 자동으로.
+        이벤트는 함수에 만들어진다.
+        function(){
+                console.log("mousemove!");
+            });
+            offsetX: 323
+            offsetY: 500 좌표 찾기
+        이거 진짜 신기함 . 좌표 찾을 수 있는 공간에서 여러가지 찾아보기.
+    -->
+</body>
+</html>

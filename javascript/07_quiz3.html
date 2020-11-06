@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_drawpanel.html</title>
+    <style>
+        canvas{
+            border: 1px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <!-- 업데이트하기 -->
+    <h1>그림판</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <br/>
+    <input type="color" id="inputColor"/>
+    <script>
+        //canvas 요쇼의 참조값 얻어오기
+        let canvas=document.querySelector("#myCanvas");
+        //canvas 에 렌더링 할 수 있는 도구(context)의 참조값 얻어오기
+        let context=canvas.getContext("2d");
+        
+        context.lineWidth=10; //선의 굵기
+
+        context.lineCap="round"; //선의 시작과 끝을 둥글게
+        context.lineJoin="round"; //선의 교차점을 둥글게
+
+        //선의 색상을 저장할 변수 만들고 "black"으로 초기화
+        let color="black";
+
+        context.strokeStyle=color; //선의 색상
+
+        // context.beginPath();
+        // context.moveTo(100,100);//시작점 지정
+        // context.lineTo(200,200);//이을점(중간점) 지정
+        // context.lineTo(200,100);//이을점(중간점) 지정
+        // context.stroke(); //그려짐
+        // context.closePath(); //경로 마무리
+
+        //현재 그림을 그리고 있는지 여부
+        let isDraw=false; //초기값은 일단 false로 지정
+
+
+
+        canvas.addEventListener("mousedown", function(event){
+            //그리고 있는 상태로 바꿔준다.
+            isDraw=true;
+            //이벤트가 일어난 곳의 좌표
+            let x=event.offsetX;
+            let y=event.offsetY;
+            //mousedown 이벤트가 일어난 지점에서부터 그릴 준비를 한다.
+            context.beginPath();
+            context.moveTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정?
+            context.strokeStyle=color;
+        });
+
+        canvas.addEventListener("mousemove", function(event){
+            if(isDraw==true){
+                //이벤트가 일어난 곳의 좌표
+            let x=event.offsetX;
+            let y=event.offsetY;
+            context.lineTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정?
+            context.stroke();
+            }
+        });
+
+        canvas.addEventListener("mouseup", function(){
+            isDraw=false;
+        });
+
+        document.querySelector("#inputColor")
+            .addEventListener("change",function(){
+                //color 변수에 현재 value 값을 대입한다.
+                color=this.value;
+            });
+    </script>
+</body>
+</html>
