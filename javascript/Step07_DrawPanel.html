@@ -7,6 +7,7 @@
     <style>
         canvas{
             border: 1px dashed gray;
+            cursor: crosshair;
         }
     </style>
 </head>
@@ -122,6 +123,14 @@
             .addEventListener("change", function(){
                 //체크여부를 (true or false) 변수에 담는다.
                 isErase=this.checked;
+                //지우는 상태 여부에 따라 커서의 모양을 바꿔준다.
+                if(isErase){
+                    document.querySelector("#myCanvas")
+                        .style.cursor="not-allowed";
+                }else{
+                    document.querySelector("#myCanvas")
+                        .style.cursor="crosshair";
+                }
             });
     </script>
 </body>
