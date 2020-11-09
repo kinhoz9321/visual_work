@@ -29,7 +29,11 @@
         <option>10</option>
     </select><br/>
     <button id="fillBackBtn">배경색 채우기</button><br/>
-    <button id="clear">전체 지우기</button>
+    <label>
+        지우개 기능
+        <input type="checkbox" id="eraseCheck"/>
+    </label><br/>
+    <button id="allClear">전부 지우기</button>
     <script>
         //canvas 요소의 참조값 얻어오기
         let canvas=document.querySelector("#myCanvas");
@@ -40,8 +44,6 @@
         //페이지 로딩 시점에 선의 굵기 초기값 지정하기(변수로 하는 이유는 필요할 때 변경하기 위해)
         let currentWidth=5;
         // context.lineWidth=lineWidth; //선의 굵기
-        let currentClear=5;
-        // 지우개의 선의 굵기 만들어보기 그림판 지우개 처럼
 
         context.lineCap="round"; //선의 시작과 끝을 둥글게
         context.lineJoin="round"; //선의 교차점을 둥글게
@@ -58,14 +60,17 @@
         // context.stroke(); //그려짐
         // context.closePath(); //경로 마무리
 
-        //현재 그림을 그리고 있는지 여부
-        let isDraw=false; //초기값은 일단 false로 지정
+        //마우스가 down 상태인지 여부
+        let isMouseDown=false;
+        //그림을 그리는 상태인지 지우는 상태인지 여부
+        //false=그림을 그리는 상태, true=지우는 상태
+        let isErase=false;
 
 
 
         canvas.addEventListener("mousedown", function(event){
-            //그리고 있는 상태로 바꿔준다. event=let event
-            isDraw=true;
+            //마우스 down 상태로 바꿔준다. event=let event
+            isMouseDown=true;
             //이벤트가 일어난 곳의 좌표
             let x=event.offsetX; //내부 event
             let y=event.offsetY; //내부 event
@@ -76,8 +81,6 @@
             context.strokeStyle=color; //외부 context, color
             //변수에 저장된 값으로 선의 굵기 지정
             context.lineWidth=currentWidth;
-
-            context.clearRect=currentClear;
         });
         /*
         함수 안에서 함수 바깥에 정의된 것들을 참조하고 있다.
@@ -88,17 +91,24 @@
         */
 
         canvas.addEventListener("mousemove", function(event){
-            if(isDraw==true){
-                //이벤트가 일어난 곳의 좌표
-            let x=event.offsetX;
-            let y=event.offsetY;
-            context.lineTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정?
-            context.stroke();
+            //만일 마우스 down 상태 일때
+            
+                if(isMouseDown == true){
+                    //이벤트가 일어난 곳의 좌표
+                    let x=event.offsetX;
+                    let y=event.offsetY;
+                    if(isErase){//만일 지우는 작업 상태이면
+                        context.clearRect(x, y, 10, 10);
+                }else{//지우는 작업 상태가 아니라면(그리는 상태라면)
+                    context.lineTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정?
+                    context.stroke();
+                }
             }
         });
 
         canvas.addEventListener("mouseup", function(){
-            isDraw=false;
+            //더이상 작업(그림or 지우기)하지 않도록 상태값을 바꿔준다.
+            isMouseDown=false;
         });
 
         document.querySelector("#inputColor")
@@ -128,14 +138,23 @@
                 //fillRect(x, y, width, height) 로 지정된 사각형 영역을 채운다.
                 context.fillRect(0, 0, 500, 500);
             });
-        
-        document.querySelector("#clear")
-            .addEventListener("click", function(){
-                context.clearRect(0, 0, 500, 500);
-            });
+        //체크박스의 체크 상태가 바뀌었을 때 호출되는 함수 등록
+        document.querySelector("#eraseCheck")
+            .addEventListener("change", function(){
+            //체크여부를 (true or false) 변수에 담는다.
+            isErase=this.checked;
+            //지우는 상태 여부에 따라 커서의 모양을 바꿔준다.
+            if(isErase){
+                document.querySelector("#myCanvas").style.cursor="not-allowed";
+            }else{
+                document.querySelector("#myCanvas").style.cursor="crosshair";
+            }
+        });
     </script>
 </body>
 </html>
 <!--
     변수는 공간 - 값이 기억되는 공간 ***
+
+    지우개도 굵기를 선택할 수 있게 만들기
 -->
