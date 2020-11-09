@@ -15,14 +15,26 @@
     <canvas id="myCanvas" width="500" height="500"></canvas>
     <br/>
     <input type="color" id="inputColor"/>
+    <select id="lineWidth">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option>4</option>
+        <option selected>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select>
+    <button id="fillBackBtn">배경색</button>
     <script>
         //canvas  요소의 참조값 얻어오기 
         let canvas=document.querySelector("#myCanvas");
         //canvas 에 렌더링 할수 있는 도구(context) 의 참조값 얻어오기 
         let context=canvas.getContext("2d");
-
-        //선의 굵기
-        context.lineWidth=10; 
+        //페이지 로딩 시점에 선의 굵기 초기값 지정하기 
+        let currentWidth=5;
         //선의 시작과 끝을 둥글게
         context.lineCap="round";
         //선의 교차점을 둥글게
@@ -53,6 +65,8 @@
             context.moveTo(x, y);
             //변수에 저장된 값으로 색상 지정
             context.strokeStyle=color;
+            //변수에 저장된 값으로 선의 굵기 지정
+            context.lineWidth=currentWidth;
         });
         //canvas 에 mousemove 이벤트 처리 
         canvas.addEventListener("mousemove", function(event){
@@ -75,6 +89,21 @@
             .addEventListener("change", function(){
                 // color 변수에 현재 value 값을 대입한다. 
                 color=this.value;
+            });
+        
+        // select 요소에 change 이벤트가 발생했을때 실행할 함수 등록
+        document.querySelector("#lineWidth")
+            .addEventListener("change", function(){
+                //change 이벤트가 일어난 요소의 value 값을 변수에 대입
+                currentWidth=this.value;
+            });
+        //배경색상 버튼을 눌렀을때 실행할 함수 등록 
+        document.querySelector("#fillBackBtn")
+            .addEventListener("click", function(){
+                //현재 선택된 색상을 체울 색으로 지정하고 
+                context.fillStyle=color;
+                // fillRect(x, y, width, height) 로 지정된 사각형 영역을 체운다.
+                context.fillRect(0, 0, 500, 500);
             });
     </script>
 </body>
