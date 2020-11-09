@@ -15,20 +15,36 @@
     <h1>그림판</h1>
     <canvas id="myCanvas" width="500" height="500"></canvas>
     <br/>
-    <input type="color" id="inputColor"/>
+    색상 <input type="color" id="inputColor"/><br/>
+    굵기 <select id="lineWidth">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option selected>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select><br/>
+    <button id="fillBackBtn">배경색 채우기</button>
     <script>
         //canvas 요소의 참조값 얻어오기
         let canvas=document.querySelector("#myCanvas");
         //canvas 에 렌더링 할 수 있는 도구(context)의 참조값 얻어오기
         let context=canvas.getContext("2d");
+        //canvas에 그림을 그릴 수 있는 도구의 참조값
         
-        context.lineWidth=10; //선의 굵기
+        //페이지 로딩 시점에 선의 굵기 초기값 지정하기(변수로 하는 이유는 필요할 때 변경하기 위해)
+        let currentWidth=5;
+        // context.lineWidth=lineWidth; //선의 굵기
 
         context.lineCap="round"; //선의 시작과 끝을 둥글게
         context.lineJoin="round"; //선의 교차점을 둥글게
 
         //선의 색상을 저장할 변수 만들고 "black"으로 초기화
-        let color="black";
+        let color="black"; //전역변수
 
         context.strokeStyle=color; //선의 색상
 
@@ -45,16 +61,26 @@
 
 
         canvas.addEventListener("mousedown", function(event){
-            //그리고 있는 상태로 바꿔준다.
+            //그리고 있는 상태로 바꿔준다. event=let event
             isDraw=true;
             //이벤트가 일어난 곳의 좌표
-            let x=event.offsetX;
-            let y=event.offsetY;
+            let x=event.offsetX; //내부 event
+            let y=event.offsetY; //내부 event
             //mousedown 이벤트가 일어난 지점에서부터 그릴 준비를 한다.
-            context.beginPath();
-            context.moveTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정?
-            context.strokeStyle=color;
+            context.beginPath(); //외부 context 변수
+            context.moveTo(x,y);//이벤트가 일어날 좌표를 이벤트로 지정? //외부
+            //변수에 저장된 값으로 색상 지정
+            context.strokeStyle=color; //외부 context, color
+            //변수에 저장된 값으로 선의 굵기 지정
+            context.lineWidth=currentWidth;
         });
+        /*
+        함수 안에서 함수 바깥에 정의된 것들을 참조하고 있다.
+        함수 바깥 영역의 변수를 참조해서 그 기능을 사용하기도 하고 함수 내부 영역에서 일어난 이벤트만 이용해서 만들기도 한다. 
+        *** 공통자원들 (공통적으로 참조할 것) 은 바깥에 정의해야한다. isDraw, color, context 등... *** 
+        *** 함수가 호출될 때마다 사용하려고 만든 것 ***
+        mousedown, mousemove, mouseup, ... event
+        */
 
         canvas.addEventListener("mousemove", function(event){
             if(isDraw==true){
@@ -73,8 +99,33 @@
         document.querySelector("#inputColor")
             .addEventListener("change",function(){
                 //color 변수에 현재 value 값을 대입한다.
-                color=this.value;
+                color=this.value; // 체인지라는 이벤트가 일어나서 document.querySelector("#inputColor")=this.value 라는 일이 일어나서 color(글로벌 영역 변수)에 참조된다.
+                // this = 이벤트가 일어난 그 요소 document.querySelector("#inputColor")
+            });
+            
+/* 1109 작업내용 */
+
+        document.querySelector("#lineWidth")
+            .addEventListener("change", function(){
+                //change 이벤트가 일어난 요소의 value 값을 변수에 대입
+                currentWidth=this.value;
+            });
+        /* id값과 참조값 헷갈리지 말기 */
+
+        // context.fillStyle="#f2b5b5"; // 채우는 색상 선택
+        // context.fillRect(0, 0, 500, 500); //(x, y, 폭, 높이) 채울 좌표 선택
+
+        // 배경색상 버튼을 눌렀을 때 실행할 함수 등록
+        document.querySelector("#fillBackBtn")
+            .addEventListener("click", function(){
+                //현재 선택된 색상을 채울 색으로 지정하고
+                context.fillStyle=color;
+                //fillRect(x, y, width, height) 로 지정된 사각형 영역을 채운다.
+                context.fillRect(0, 0, 500, 500);
             });
     </script>
 </body>
 </html>
+<!--
+    변수는 공간 - 값이 기억되는 공간 ***
+-->
