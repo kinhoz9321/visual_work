@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example.html</title>
+</head>
+<body>
+    <h1>논리 연산자 테스트 예제</h1>
+    <input type="text" id="height" placeholder="키를 입력하세요"/>
+    <input type="text" id="weight" placeholder="몸무게를 입력하세요"/>
+    <button id="checkBtn">놀이기구를 탈 수 있는지 확인하기</button>
+    <p id="result"></p>
+    <script>
+        
+        /*
+        키가 너무 작거나 몸무게가 너무 크면 탈 수 없는 놀이기구가 있다.
+        키는 150 이상, 몸무게는 100 미만이 기준이다.
+        키와 몸무게를 입력하고 확인하기 버튼을 누르면
+        해당 놀이기구를 탈 수 있는지 없는지 메세지를 
+        p요소의 innerText로 출력하는 프로그래밍을 해보세요.
+        "탈 수 있습니다.", "탈 수 없습니다."
+        */
+
+        // let height1=document.querySelector("#height").value;
+        // let weight1=document.querySelector("#weight").value;
+        
+        // let result1=parseFloat(height1)||parseFloat(weight1);
+
+        // document.querySelector("#checkBtn")
+        //     .addEventListener("click",function(result1){
+        //         document.querySelector("#result").innerText="탈 수 있습니다."
+        //     });
+        // document.querySelector("#checkBtn")
+        //     .addEventListener("click", function(result1){
+        //         document.querySelector("#result").innerText="탈 수 없습니다."
+        //     });
+
+        // document.querySelector("#checkBtn")
+        //     .addEventListener("click",function(result1){
+        //     if(result1==true){
+        //     document.querySelector("#result").innerText="탈 수 있습니다."
+        //     }else{
+        //     document.querySelector("#result").innerText="탈 수 없습니다."
+        //     };
+        // };
+
+        /*강사님과 함께 하기 우... 우... 구성은 했지만 조합을 못했다. 제길~!*/
+        document.querySelector("#checkBtn")
+            .addEventListener("click", function(){
+                //1. 입력한 키를 읽어온다.
+                let height1=document.querySelector("#height").value;
+                //2. 입력한 몸무게를 읽어온다.
+                let weight1=document.querySelector("#weight").value;
+
+                //3. 만일 키가 150이상이고 몸무가게 100미만이면 "탈 수 있습니다." 를 p요소에 출력하고
+                // 그렇지 않으면 "탈 수 없습니다."를 p요소에 출력한다.
+                if(height1>=150&&weight1<100){
+                    document.querySelector("#result").innerText="탈 수 있습니다.";
+                }else{
+                    document.querySelector("#result").innerText="탈 수 없습니다."
+                };
+            
+            });
+    </script>
+</body>
+</html>

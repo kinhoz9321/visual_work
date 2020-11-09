@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example2.html</title>
+</head>
+<body>
+    <h1>논리 연산자 테스트</h1>
+    <input type="text" id="inputId" placeholder="아이디 입력"/>
+    <input type="text" id="inputPwd" placeholder="비밀번호 입력"/>
+    <button id="authBtn">인증하기</button>
+    <p id="result"></p>
+    <script>
+        /*
+        아이디 는 "gura" 비밀번호는 "1234" 가 맞는 정보이다.
+        아이디와 비밀번호를 입력하고 인증하기 버튼을 눌렀을 때
+        해당정보가 일치하는지 판별해서 일치하면
+        p 요소의 innerText로 "인증 되었습니다."를 출력하고
+        일치하지 않으면 "아이디 혹은 비밀번호가 틀려요"를 출력하도록 프로그래밍 해보세요.
+        */
+
+        //해냈다! 잘했어욤!
+        document.querySelector("#authBtn")
+            .addEventListener("click", function(){
+               // 1. 입력한 아이디를 읽어온다. ==gura
+                var Id=document.querySelector("#inputId").value;
+               // 2. 입력한 비밀번호를 읽어온다 ==1234
+                var Pwd=document.querySelector("#inputPwd").value;
+
+               //3. 만일 정보가 일치하면 p요소에 인증되었습니다.를 출력하고
+               //일치하지 않으면 아이디 혹은 비밀번호가 틀려요를 출력한다.
+                if(Id=="gura" && Pwd=="1234"){
+                document.querySelector("#result").innerText="인증되었습니다.";
+                }else{//둘중하나라도 다르게 입력했다면
+                document.querySelector("#result").innerText="아이디 혹은 비밀번호가 틀려요.";
+                }
+        });
+        /*if문 자주쓰이는 구조 확실하게 익히기! 불리언 사용법두!*/
+    </script>
+</body>
+</html>

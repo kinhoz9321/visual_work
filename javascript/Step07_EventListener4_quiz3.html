@@ -29,7 +29,7 @@
         <option>10</option>
     </select><br/>
     <button id="fillBackBtn">배경색 채우기</button><br/>
-    <button id="clear">전체 지우기</button>
+
     <script>
         //canvas 요소의 참조값 얻어오기
         let canvas=document.querySelector("#myCanvas");
@@ -76,8 +76,6 @@
             context.strokeStyle=color; //외부 context, color
             //변수에 저장된 값으로 선의 굵기 지정
             context.lineWidth=currentWidth;
-
-            context.clearRect=currentClear;
         });
         /*
         함수 안에서 함수 바깥에 정의된 것들을 참조하고 있다.
