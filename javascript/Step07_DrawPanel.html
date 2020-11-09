@@ -28,6 +28,10 @@
         <option>10</option>
     </select>
     <button id="fillBackBtn">배경색</button>
+    <label>
+        지우개 기능
+        <input type="checkbox" id="eraseCheck"/>
+    </label>
     <script>
         //canvas  요소의 참조값 얻어오기 
         let canvas=document.querySelector("#myCanvas");
@@ -51,12 +55,15 @@
         // context.stroke();
         // context.closePath();
 
-        //현재 그림을 그리고 있는지 여부
-        let isDraw=false; //초기값은 일단 false 로 지정 
+        //마우스가 down 상태 인지 여부
+        let isMouseDown=false;
+        //그림을 그리는 상태인지 지우는 상태인지 여부 
+        // false => 그림을 그리는 상태, true => 지우는 상태  
+        let isErase=false; 
 
         canvas.addEventListener("mousedown", function(event){
-            //그리고 있는 상태로 바꿔준다.
-            isDraw=true;
+            //마우스 down 상태로 바꿔준다.
+            isMouseDown=true;
             //이벤트가 일어난곳의 좌표
             let x=event.offsetX;
             let y=event.offsetY;
@@ -70,19 +77,23 @@
         });
         //canvas 에 mousemove 이벤트 처리 
         canvas.addEventListener("mousemove", function(event){
-            //만일 현재 그림을 그리고 있는 상태 일때
-            if(isDraw == true){
+            //만일 마우스 down 상태 일때
+            if(isMouseDown == true){
                 //이벤트가 일어난곳의 좌표
                 let x=event.offsetX;
                 let y=event.offsetY;
-                context.lineTo(x, y);
-                context.stroke();
+                if(isErase){ //만일 지우는 작업 상태이면 
+                    context.clearRect(x, y, 10, 10);
+                }else{//지우는 작업 상태가 아니라면 (그리는 상태라면)
+                    context.lineTo(x, y);
+                    context.stroke();
+                }
             }
         });
 
         canvas.addEventListener("mouseup", function(){
-            //더이상 그려지지 않도록 상태값을 바꿔준다. 
-            isDraw=false;
+            //더이상 작업(그림 or 지우기) 않도록 상태값을 바꿔준다. 
+            isMouseDown=false;
         });
 
         document.querySelector("#inputColor")
@@ -104,6 +115,13 @@
                 context.fillStyle=color;
                 // fillRect(x, y, width, height) 로 지정된 사각형 영역을 체운다.
                 context.fillRect(0, 0, 500, 500);
+            });
+
+        //체크박스의 체크 상태가 바뀌었을때 호출되는 함수 등록
+        document.querySelector("#eraseCheck")
+            .addEventListener("change", function(){
+                //체크여부를 (true or false) 변수에 담는다.
+                isErase=this.checked;
             });
     </script>
 </body>
