@@ -53,15 +53,26 @@
                 //2. 입력한 몸무게를 읽어온다.
                 let weight1=document.querySelector("#weight").value;
 
-                //3. 만일 키가 150이상이고 몸무가게 100미만이면 "탈 수 있습니다." 를 p요소에 출력하고
+                //3. 만일 키가 150이상이고 몸무게가 100미만이면 "탈 수 있습니다." 를 p요소에 출력하고
                 // 그렇지 않으면 "탈 수 없습니다."를 p요소에 출력한다.
-                if(height1>=150&&weight1<100){
+                /* and 사용 */
+                if(height1>=150 && weight1<100){
                     document.querySelector("#result").innerText="탈 수 있습니다.";
                 }else{
                     document.querySelector("#result").innerText="탈 수 없습니다."
                 };
-            
+
+                /*반대로 조건 쓰기 or 사용*/
+                if(height1<150 || weight>=100){
+                    document.querySelector("#result").innerText="탈 수 없습니다."
+                }else{
+                    document.querySelector("#result").innerText="탈 수 있습니다.";
+                };
             });
     </script>
 </body>
 </html>
+<!--
+    비교연산을 먼저하고 논리연산을 한다
+    명시적으로 먼저 하려면 ()를 이용하면 된다.
+-->

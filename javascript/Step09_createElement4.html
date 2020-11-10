@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_createElement4.html</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>다양한 구조의 요소 만들기</h1>
+    <table border=collpase;>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody id="one">
+
+        </tbody>
+    </table>
+    <script>
+        let obj={name:"김구라", addr:"노량진"};
+
+        //td 만들기 innerText obj.name 추가하기
+        
+        //td 만들기 innerText obj.addr 추가하기
+
+        //tr 만들기 td 2개추가하기
+
+        let td1=document.createElement("td");
+        td1.innerText=obj.name;
+
+        let td2=document.createElement("td");
+        td2.innerText=obj.addr;
+
+        let tr=document.createElement("tr");
+
+        tr.append(td1);
+        tr.append(td2);
+
+        document.querySelector("#one").append(tr);
+    </script>
+</body>
+</html>
+<!--
+    * hint *
+    let p1=document.createElement("p");
+    undefined
+
+    p1.innerText="p1 입니다.";
+    "p1 입니다."
+
+    let p2=document.createElement("p");
+    undefined
+
+    p2.innerText="p2 입니다.";
+    "p2 입니다."
+
+    let div=document.createElement("div");
+    undefined
+
+    div.append(p1);
+    undefined
+
+    div.append(p2);
+    undefined
+
+    div
+    <div>
+        <p>p1 입니다.</p>
+        <p>p2 입니다.</p>
+    </div>
+-->

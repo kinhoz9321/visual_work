@@ -34,9 +34,20 @@
                 document.querySelector("#result").innerText="인증되었습니다.";
                 }else{//둘중하나라도 다르게 입력했다면
                 document.querySelector("#result").innerText="아이디 혹은 비밀번호가 틀려요.";
-                }
+                };
+
+                /* 반대로 조건 만들어보기 */
+                if(Id!="gura" || Pwd!="1234"){
+                    document.querySelector("#result").innerText="아이디 혹은 비밀번호가 틀려요.";
+                }else{
+                    document.querySelector("#result").innerText="인증되었습니다.";
+                };
         });
         /*if문 자주쓰이는 구조 확실하게 익히기! 불리언 사용법두!*/
     </script>
 </body>
 </html>
+<!--
+    아이디와 비밀번호 둘다! 같아야 한다.
+    and 조건 사용! 이런 걸 이해할 줄 알아야 함.
+-->
