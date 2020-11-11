@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+    <!--외부(external) css 로딩하기-->
+    <link rel="stylesheet" href="./custom.css">
+    <style>
+        /* *** 여기는 internal(내부) CSS 영역 *** */
+        div {
+            /*
+            css attribute name : value; 
+            속성값은 정해진대로 쓰기도 하고 마음대로 쓰기도 한다.
+            마음대로 쓰는 것 ex) 크기
+            */
+            margin-top: 80px;
+            color:#00a2ffcb;
+            background-color: aliceblue /*배경색은 padding까지만 칠해진다.*/
+        };
+        /*어디에 적용해야할지 알아야 하기 때문에 선택자를 꼭 지정해줘야 한다.*/
+        
+    </style>
+</head>
+<body>
+    <div>css 를 배워 보아요~</div>
+    <!-- ***style="여기는 inline css 영역" *** -->
+    <div style="background-color: thistle;">css 를 배워 보아요</div>
+    <!--적용할 요소에 직접 작성하기 때문에 선택의 문제가 일어나지 않는다.-->
+    <div>css 를 배워 보아요</div>
+    <div>css 를 배워 보아요</div>
+    <p>p1 입니다.</p>
+</body>
+</html>
+<!--
+    외부 css 작성법
+    내부 css 작성법
+    inline css 작성법
+    3가지 익히기
+-->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step02_Selector.html</title>
+	<style>
+		/* 요소명 선택자 */
+		div{
+			border-width: 1px;
+			border-style: solid;
+			border-color: #ff0000;
+		}
+		/* 클래스 선택자 */
+		.bg-yellow{
+			background-color: #ffff00;
+		}
+		/* 아이디 선택자 */
+		#myDiv{
+			color: #0000ff;
+		}
+	</style>
+	<!--
+		3대 선택자
+		요소명 
+		클래스 . 
+		아이디 #
+	-->
+</head>
+<body>
+<div>div1</div>
+<div class="bg-yellow">div2</div>
+<div class="bg-yellow">div3</div>
+<div class="bg-yellow">div4</div>
+<div id="myDiv">div5</div>
+<!-- *** 하나의 페이지에서 id는 유일해야 한다. *** -->
+<a href="" class="bg-yellow"></a>
+<!-- *** 요소명과 상관없이 그룹으로 묶고 싶을 때 class를 사용할 수 있다. *** -->
+</body>
+</html>
