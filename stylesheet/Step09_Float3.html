@@ -20,11 +20,19 @@
 			/* float 된 자식 요소를 감쌀수 있도록 설정 */
 			overflow: auto;
 		}
+		/* 자식요소를 감싸고 배경색도 설정하고 경계선으로 잘 감싸고 싶을 때 사용.*/
 	</style>
 </head>
 <body>
 <h1>block 요소를 inline 요소 처럼 한줄로 배치</h1>
 <div class="wrapper">
+	<!--
+		부모의 크기는 자식을 포함할 수 있을만큼 가지는 게 정상
+		하지만 자식이 float 요소를 사용했을 경우
+		떠있기 때문에 감쌀 수 없음.
+		이 때 사용할 수 있는 게 overflow : auto 사용
+		* overflow : auto는 원래 이때 사용하는 게 아님 * 찾아보기
+	-->
 	<div class="box">div1</div>
 	<div class="box">div2</div>
 	<div class="box">div3</div>

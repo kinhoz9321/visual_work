@@ -15,7 +15,7 @@
 			아이디 선택자 가중치 : 100점
 
 			인라인 css 가중치 : 1000 점
-			!important 가중치 : 10000점 
+			!important 가중치 : 10000점 ***
 		*/
 		li{ background-color: yellow; } /* 1 */
 		
@@ -27,16 +27,21 @@
 
 		#one{ background-color: pink; } /* 100 */
 		
-		#one{ background-color: white !important; } /* 10000 */
+		#one{ background-color: rgba(167, 21, 21, 0.226) !important; } /* 10000 */
 	</style>
 </head>
 <body>
 <div class="wrapper">
 	<div class="nav">
 		<ul>
-			<li style="background-color: #999;" class="active" id="one">하나</li>
+			<li style="background-color: rgb(161, 15, 15);" class="active" id="one">하나</li>
 		</ul>
 	</div>
 </div>	
 </body>
 </html>
+<!--
+	css의 상속을 방지
+	!important 상속으로 바꾸지마!
+	내부 style 속성을 바꿔도 !important로 설정된 것은 바뀌지 않는다.
+-->

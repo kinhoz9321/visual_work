@@ -5,21 +5,22 @@
 	<title>Step08_PseudoElement.html</title>
 	<style>
 		/* 가상요소 선택자 */
-		p:first-letter{
+		p:first-letter{ /*p요소의 첫번째 글자의 디자인 결정*/
 			font-weight: bold;
 			color: red;
 		}
-		#one:first-line{
+		#one:first-line{/*id가 one인 첫줄의 디자인 결정*/
 			background-color: yellow;
 		}
-		.quote:before{
+		.quote:before{/*스타일 qoute 의 첫번째 위치에 싱글따옴표를 넣고 색깔은 레드를 하겠다.*/
 			content:"'";
 			color: red;
 		}
-		.quote:after{
+		.quote:after{/*스타일 qoute 의 마지막 위치에 싱글따옴표를 넣고 색깔은 블루를 하겠다.*/
 			content:"'";
 			color: blue;
 		}
+		/*이전 이후*/
 	</style>
 </head>
 <body>
@@ -32,3 +33,8 @@
 <p class="quote">어쩌구.. 저쩌구...</p>
 </body>
 </html>
+<!--
+	실제 존재하지는 않지만 마치 있는 것처럼 느껴지는 요소가 있다.
+	가상 요소
+
+-->

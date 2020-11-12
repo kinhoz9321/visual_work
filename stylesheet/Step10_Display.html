@@ -8,20 +8,49 @@
 			/* 문서 객체는 만들어 졌지만 공간을 차지하지 않고
 			보이지 않게 하기  */
 			display: none;
+			/*있지만 안보이게 한다. 자리도 차지하지 않는다.
+			보이게 하는 건 그 때그 때 다르다. 뭐가 보이게 할지에 따라 다르게 명령해야 함.
+			블럭 요소 display : block;
+			인라인 요소 display : inline;
+			*/
 		}
+		/*block, inline, inline-block, table-cell...*/
 	</style>
 </head>
 <body>
 <h1>display 속성 테스트</h1>
-<button id="showBtn">눌러보셈</button>
-<p id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cupiditate ea earum sequi aspernatur reprehenderit at quia, consequuntur consequatur iste quos necessitatibus eveniet ipsam, vero, eaque iusto maiores, ipsum explicabo.</p>	
-<img src="images/kim1.png" />
+	<button id="showBtn">눌러보셈</button>
+	<p id="one">Lorem ipsum dolor sit amet, consectetur adipisicing 	elit. Possimus cupiditate ea earum sequi aspernatur 	reprehenderit at quia, consequuntur consequatur iste quos 	necessitatibus eveniet ipsam, vero, eaque iusto maiores, ipsum 	explicabo.</p>	
+	<img src="images/kim1.png" />
 <script>
 	document.querySelector("#showBtn")
 	.addEventListener("click", function(){
 		document.querySelector("#one")
 		.style.display="block";
+		//inline css가 힘이 더 세다
+		//자바스크립트로 css를 설정하면 대부분 먹는다. 1개를 제외하고는. 절대 바꾸지마 못박은 css를 제외하고는 거의 다 자바스크립트 조작으로 바꿀 수 있음.
+		//style="display:block;"
+		//참조값.style.display="block"; 중요중요~!
 	});
 </script>
 </body>
 </html>
+<!--
+	inline width height가 안먹힌다. 
+	자기자신의 폭만 가진다.
+	글자 하나하나처럼 행동한다.
+
+	inline block 
+	글자처럼 행동하지만 width, height를 다 가질 수 있다.
+
+	table cell 
+	td처럼 행동한다.
+	특별한 경우에 쓴다.
+
+	base line 
+	글자는 일렬로 나열할 때 base line에 맞춰서 나열한다.
+	가상의 base line이 있음.
+	inline, inline block 요소
+
+	flaot left 하면 윗쪽 라인에 맞춰서 정렬된다.
+-->

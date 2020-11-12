@@ -7,7 +7,13 @@
 		.box{
 			width: 100px;
 			height: 100px;
+			/*
+			순수크기
+			*/
 			background-color: yellow;
+			/*
+			padding까지 포함
+			*/
 			border: 10px solid red;
 			padding: 10px;
 			margin: 10px;
@@ -19,7 +25,13 @@
 			border-box : width 와 height 에 padding 과 border 포함
 			
 			*/
-			box-sizing: margin-box;
+			box-sizing: border-box;
+			/*
+			content-box: 순수크기가 100px;
+			border-box:padding과 border를 합쳐서 width가 100px이 된다.
+			기본 값 = 순수크기 width p 10 b 10 m 10
+			border-box로 설정해서 크기를 정하는게 더 편하다.
+			*/
 		}
 	</style>
 </head>

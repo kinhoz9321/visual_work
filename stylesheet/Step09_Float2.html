@@ -14,6 +14,14 @@
 		p{
 			clear: both; /* left | right | both*/
 		}
+		/*
+		p요소의 margin top만 살짝 말려올라갔지 밑으로 깔리지 않았다. 
+		clear 때문. 
+		p요소 입장에서 왼쪽이 지저분하니까 청소하는 것. clear인 이유.
+		양쪽 다 영향을 안받으려면 both
+		left는 왼쪽 영향을 받지 않기
+		right는 오른쪽 영향을 받지 않기
+		*/
 	</style>
 </head>
 <body>
@@ -26,3 +34,8 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas repellat velit eius. Minus nesciunt rem repellat officiis similique molestias voluptatem cum tempora, doloribus quas autem. Perspiciatis eos, enim. Velit, numquam!</p>
 </body>
 </html>
+<!--
+	블럭요소를 인라인 요소처럼 한줄에 배치하고자 할 때 많이 쓴다.
+
+	float를 사용할 때 clear를 같이 사용하는 경우가 많다.
+-->

@@ -10,15 +10,19 @@
 			- left & right margin, padding 을 가질수 있다.
 			- top & bottom margin, padding 을 가질수 없다. 
 			- 왼쪽과 오른쪽에 다른 요소가 올수 있다. 
+			- 폭이 부족하면 글자처럼 흘러버린다.
+			- line height 알아보기
 		*/
 		#one{
 			border: 1px solid red;
 			display: inline;
+			line-height:100px;
 		}
 		/*
 			[ inlien block 요소 ]
 			- width, height, maring, padding 모두 가능
 			- 왼쪽과 오른쪽에 다른 요소가 올수 있다.
+			- 하나의 덩어리. 폭이 부족해도 border가 쪼개지지 않는다.
 		*/
 		#two{
 			border: 1px solid blue;

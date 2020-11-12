@@ -10,7 +10,7 @@
 			background-color: yellow;
 			border: 1px solid green;
 			color: white;
-			overflow: visible; /* default 값 */
+			overflow: visible; /* default 값 / hidden */ 
 		}
 		#one{
 			width: 500px;
@@ -25,11 +25,11 @@
 			color: white;
 			/* 
 				넘친 컨텐츠 처리
-				visible | hidden | scroll | auto
+				visible | hidden | scroll | auto (넘치면 스크롤 아니면 스크롤 안만들어짐)
 
-				overflow, overflow-x, overflow-y
+				overflow, overflow-x, overflow-y (x축 , y축 을 어떻게 할 것인지 따로 지정할 수 있다.)
 			*/
-			overflow: scroll; 
+			overflow: auto; 
 		}
 		#two{
 			width: 100px;
@@ -48,3 +48,8 @@
 </div>		
 </body>
 </html>
+<!--
+	overflow
+	감당할 수 없게 넘치는 크기
+	
+-->
