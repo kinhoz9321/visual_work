@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_gridsystem2.html</title>
+    <!--bootstrap css 로딩하기 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .container{
+            border:1px solid red;
+        }
+        .row > div{
+            border:1px dashed green;
+        }
+        .row img{
+            max-width: 100%;/*이미지를 집어넣을 때 아주 중요!*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>반응형 칼럼 테스트</h1>
+        <div class="row">
+            <div class="col-6">.col-6</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">.col-sm-6</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">.col-lg-6</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">.col-xl-6</div>
+        </div>
+        <h1>이미지를 반응형 칼럼에 넣기</h1>
+        <div class="row">
+            <div class="col-md-6"><img src="images/image1.png"></div>
+            <div class="col-md-6"><img src="images/image2.png"></div>
+        </div>
+        <h1>이미지 4장</h1>
+        <div class="row">
+            <div class="col-md-6 col-lg-3"><img src="images/image1.png"></div>
+            <div class="col-md-6 col-lg-3"><img src="images/image2.png"></div>
+            <div class="col-md-6 col-lg-3"><img src="images/image3.png"></div>
+            <div class="col-md-6 col-lg-3"><img src="images/image4.png"></div>
+        </div>
+    </div>
+</body>
+</html>
+<!--
+    grid 시스템을 이용한 반응형 페이지를 만드는 방법 ***
+    col-lg-3 12등분 한것중에 3칸의 크기 사진4장 차지
+    col-md-6 12등분 한것중에 6칸을 차지하겠다. 사진 2장 차지
+    col-md-6 숫자는 1부터 12까지 있다. column 숫자
+    칼럼에 넣기 싫은 것은 그냥 container 안에 넣으면 된다.
+
+    css는 나중에 정의된게 이긴다. 
+    col-md-6 col-sm-3 sm이 이긴다.
+    크기와 상관없음.
+-->
