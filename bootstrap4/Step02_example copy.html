@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .container{
+            border:1px solid red;
+        }
+        .row align-items-start,.row align-items-center,.row align-items-end{
+            border:1px solid green;
+        }
+        .col{
+            border:1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+<!--
+    결과 웹페이지를 보면 어떻게 폭을 나눠서 쓰는지에 대해 알수있다.
+    div는 모든 영역에 대해서 같은 비율을 유지한다.
+    class명을 무엇을 하느냐에 따라 ui가 달라진다. 개멋짐;
+    outline 외곽선 스타일의 버튼
+    gutter 칼럼과 칼럼사이가 알아서 30px 떨어짐
+
+    <div class="w-100"></div>
+    w-100 = width-100
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3">누가먼저 적용될까유</div>
+        </div>
+
+        이렇게 될 경우
+        div class="col-md-6 col-sm-3"
+        md-6이 적용된다. 클래스에 적용된 순서는 상관없다. css파일에서 누가 나중에 적용되었는가가 중요. 
+        결국 xl가 class에 적혀있다면 xl가 적용될 가능성이 제일 크다.
+
+-->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_grid.html</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .row{ 
+            height: 100px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>수직 정렬 테스트</h1>
+        <div class="row border align-items-start">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>수직 정렬 테스트</h1>
+        <div class="row border align-items-center">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>수직 정렬 테스트</h1>
+        <div class="row border align-items-end">
+            <div class="col border bg-info">col1</div>
+            <div class="col border bg-info">col2</div>
+            <div class="col border bg-info">col3</div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>수직 정렬 테스트 self</h1>
+        <div class="row border">
+            <div class="col border bg-info align-self-start">col1</div>
+            <div class="col border bg-info align-self-center">col2</div>
+            <div class="col border bg-info align-self-end">col3</div>
+        </div>
+    </div>
+<!-- 하나씩 설정을 하면 원하는 위치에 각자 정렬 할 수 있다. -->
+</body>
+</html>
+<!--
+    row align-items-start/center/end
+    row 안에서 원하는 위치에 수직정렬 할 수 있다.
+-->

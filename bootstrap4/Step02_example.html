@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grid System 사용하기</h1>
+        <div class="row">
+            <div class="col">
+                <h2>첫번째 칼럼 컨텐츠</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis doloribus quae molestiae quam esse laudantium quibusdam laboriosam officia iusto, possimus et facilis repellat ullam sit veniam amet ad! Expedita, tempora.</p>
+                <button class="btn btn-primary">확인</button>
+            </div>
+            <div class="col">
+                <h2>두번째 칼럼 컨텐츠</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil temporibus, eaque labore officiis commodi nemo cumque necessitatibus, perspiciatis ipsa similique qui, tempora ex quia eos tenetur quam dolorem possimus magnam!</p>
+                <button class="btn btn-outline-warning">취소</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+<!--
+    결과 웹페이지를 보면 어떻게 폭을 나눠서 쓰는지에 대해 알수있다.
+    div는 모든 영역에 대해서 같은 비율을 유지한다.
+    class명을 무엇을 하느냐에 따라 ui가 달라진다. 개멋짐;
+    outline 외곽선 스타일의 버튼
+    gutter 칼럼과 칼럼사이가 알아서 30px 떨어짐
+
+    <div class="w-100"></div>
+    w-100 = width-100
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3">누가먼저 적용될까유</div>
+        </div>
+
+        이렇게 될 경우
+        div class="col-md-6 col-sm-3"
+        md-6이 적용된다. 클래스에 적용된 순서는 상관없다. css파일에서 누가 나중에 적용되었는가가 중요. 
+        결국 xl가 class에 적혀있다면 xl가 적용될 가능성이 제일 크다.
+
+-->
