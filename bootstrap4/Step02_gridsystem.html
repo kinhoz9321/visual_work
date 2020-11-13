@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_gridsystem.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .row > div{
+            border: 1px dashed greenyellow;
+        }
+        .col > img{
+            /* 최대 폭이 부모 컨테이너를 넘지 못하도록 제한 */
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grid System 테스트</h1>
+        <div class="row">
+            <div class="col">칼럼1</div>
+            <div class="col">칼럼2</div>
+        </div>
+        <div class="row">
+            <div class="col">칼럼1</div>
+            <div class="col">칼럼2</div>
+            <div class="col">칼럼3</div>
+        </div>
+        <h1>칼럼에 이미지 배치해 보기</h1>
+        <div class="row">
+            <div class="col"><img src="images/image1.png"/></div>
+            <div class="col"><img src="images/image2.png"/></div>
+            <div class="col"><img src="images/image3.png"/></div>
+        </div>
+    </div>
+</body>
+</html>
