@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01_hello.html</title>
+    <!-- jQuery 로딩하기 -->
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기</button>
+    <p id="one">p1</p>
+    <p>p2</p>
+    <p class="my-class">p3</p>
+    <p class="my-class">p4</p>
+    <p class="my-class">p5</p>
+    <script>
+        /*jQuery 사용*/
+        $("#changeBtn2").on("click", function(){ //.on 기능
+            $("p").text("해골"); //.text 기능 = innerText를 조작하는 기능 (알아서 반복문을 돌아줌 / 배열안의 모든 문서객체에 대한 동작)
+        });
+
+        //버튼을 눌렀을 때 실행할 함수 등록 모든 p요소가 김구라로 바뀌게 만들어보기 배열, for문 사용
+        document.querySelector("#changeBtn")
+            .addEventListener("click", function(){
+                let divs=document.querySelectorAll("p");
+                for(let i=0; i<divs.length; i++){
+                    divs[i].innerText="김구라";
+                };
+        });
+    </script>
+</body>
+</html>
+<!--
+    *** 제이쿼리 자바스크립트 비교 ***
+
+    $("#changeBtn").on("click", function(){});
+    $("p").text("해골");
+    믿을 수 없어...; 이렇게까지 극단적으로 줄여지다니~
+    
+    $()호출하면 배열로 바뀐다.(리턴한다) ***
+    일반적인 배열이 아닌 제이쿼리의 기능이 합쳐진 배열을 리턴한다.
+
+    $() 조건에 맞는 참조값이 배열로 리턴된다.
+    $() ()안에는 css의 선택자와 똑같이 작성된다. 다만, 문자열로 쓸 뿐이다. 
+    요소명, 클래스명, 아이디명, body>div 등... 그렇다면 문서요소의 참조값을 배열에 넣어서 리턴해준다. 
+
+    $() = querySelector()와 querySelectorAll()의 겸용
+    $()는 무조건 배열을 리턴해준다. 
+
+    text("해골")= for(let i=0; i<divs.length; i++){
+                    divs[i].innerText="김구라";
+                };
+
+    .on .text 기능을 써봄
+
+    $()[i] 배열처럼 따로 써도 됨
+    
+    제이쿼리의 구조
+    $().action(); - 문서객체중에 필요한 것을 찾아서 동작을 한다. 동작은 엄청나게 많다. 1,200개. 그 중 자주쓰는 것 50개 정도 배우면 왠만한 것은 다 할 수 있다. 
+    $().action().action2().action3()...
+
+    $("#one").css("color","red"); 제이쿼리 inline css 적용
+    .style.color="red"; 자바스크립트 inline css 적용
+
+    $(".my-class").css("border", "1px solid blue");
+    .style.border="1px solid blue";
+
+    제이쿼리의 동작과 사용법만 익히면 된다. 
+
+    제이쿼리의 추가동작 - 플러그인
+
+    디버깅 하는 법
+    검사 소스 브레이크 포인트
+    f10을 눌러서 한줄씩 디버깅 디버깅 연습해보기 익숙해져야할 것 같다. 
+-->
