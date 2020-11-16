@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample.html</title>
+    <!-- bootstrap css 로딩-->
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <!-- jquery, bootstrap js 로딩하기-->
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- 
+        navbar-expand-xx : 어느 영역이상에서 navbar 를 펼치게 할것인지 지정
+        navbar-expand-lg : large device 이상의 영역, 즉 width 992px 이상 
+        navbar-expand-md : medium device 이상의 영역, width 768px  이상
+        navbar-light : 밝은색 계열의 배경색일때 지정 (글자의 밝기를 결정한다)
+        navbar-dark : 어두운색 계열의 배경색일때 지정 (글자의 밝기를 결정한다)
+    -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <!-- 좌상단의 대표 아이콘 혹은 대표 링크 -->
+        <a class="navbar-brand" href="#">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+        </a>
+        <!-- 
+            우상단에 생기는 메뉴 버튼 
+            data-toggle="collapse" 가 있어야 동작을 한다. 
+            data-target="#아이디" 접었다 폈다할 컨텐츠 아이디를 참조 해야한다.
+        -->
+        <button class="navbar-toggler" type="button" 
+            data-toggle="collapse" data-target="#one" >
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <!-- 접었다 폈다할 컨텐츠는 아래의 div 안에 넣어야 한다. -->    
+        <div class="collapse navbar-collapse" id="one">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <!-- active 클래스가 있는 nav 링크가 밝은 색으로 나온다. -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Study</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <!-- 대문 컨텐츠는 jumbotron 안에 배치하면 조금더 돋보이게 나온다. -->
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <!-- 
+                눌렀을때 모달을 띄우는 버튼
+                data-toggle="modal"
+                data-target="#아이디"  아이디는 띄울 모달의 아이디 참조 
+            -->
+            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-lg" href="#">Learn more</a>
+            <a class="btn btn-secondary btn-lg" href="#">Download</a>
+        </div>         
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
